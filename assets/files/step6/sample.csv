@@ -1,0 +1,4 @@
+id,title,content,source
+1,Introduction to RAG,RAG stands for Retrieval-Augmented Generation,docs/intro.pdf
+2,Vector Databases,Vector databases store embeddings for fast similarity search,docs/vectors.pdf
+3,LangChain Basics,LangChain is a framework for building LLM applications,docs/langchain.pdf

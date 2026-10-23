@@ -1,0 +1,124 @@
+1
+
+00:00:00,000  -->  00:00:03,440
+How do we implement an agentic workflow?
+
+2
+
+00:00:03,440  -->  00:00:08,550
+Well, at the heart of an agentic workflow are the agents themselves.
+
+3
+
+00:00:08,550  -->  00:00:13,740
+Let's take a look at this little script that defines agents.
+
+4
+
+00:00:13,740  -->  00:00:20,640
+As we know, agents are a piece of code that can execute work.
+
+5
+
+00:00:20,640  -->  00:00:23,710
+They have access to knowledge,
+
+6
+
+00:00:23,710  -->  00:00:28,850
+they have a persona and they might
+
+7
+
+00:00:28,850  -->  00:00:35,005
+even be able to execute a task or return a piece of information.
+
+8
+
+00:00:35,005  -->  00:00:38,430
+For our workflows, what we're going to do is,
+
+9
+
+00:00:38,430  -->  00:00:40,650
+we're going to define different agents.
+
+10
+
+00:00:40,650  -->  00:00:44,650
+In this case, I'm defining them as a class.
+
+11
+
+00:00:46,700  -->  00:00:53,665
+Then I will define classes for each one of the types of agents.
+
+12
+
+00:00:53,665  -->  00:00:57,100
+In this case, I have an agent that does research,
+
+13
+
+00:00:57,100  -->  00:01:03,630
+an agent that summarizes and an agent that fact checks.
+
+14
+
+00:01:03,630  -->  00:01:08,220
+You can start matching these different types of
+
+15
+
+00:01:08,220  -->  00:01:13,510
+agents to the different possible agentic workflows.
+
+16
+
+00:01:13,510  -->  00:01:15,840
+For each one of the agents,
+
+17
+
+00:01:15,840  -->  00:01:19,100
+we define its knowledge as attributes,
+
+18
+
+00:01:19,100  -->  00:01:21,040
+just like any other class,
+
+19
+
+00:01:21,040  -->  00:01:26,920
+and then we define functions to run the agents themselves.
+
+20
+
+00:01:28,120  -->  00:01:31,420
+Every agent will be a little bit different.
+
+21
+
+00:01:31,420  -->  00:01:36,100
+Some agents will have a function and no attributes.
+
+22
+
+00:01:36,100  -->  00:01:41,040
+The way that you define your agent really is up to you.
+
+23
+
+00:01:41,040  -->  00:01:47,430
+The way that you use agents is what defines an agentic workflow.
+
+24
+
+00:01:47,430  -->  00:01:52,860
+In this case, I define three agents, and for execution,
+
+25
+
+00:01:52,860  -->  00:01:59,520
+what I'm doing is I'm running each of my agents step by step.

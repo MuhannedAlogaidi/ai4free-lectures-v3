@@ -1,0 +1,164 @@
+1
+
+00:00:00,000  -->  00:00:06,420
+in this exercise you're being asked to implement the structure for an agentic workflow.
+
+2
+
+00:00:06,420  -->  00:00:11,000
+You can code agentic workflows in many ways.
+
+3
+
+00:00:11,000  -->  00:00:15,120
+In reality, new research is coming up with
+
+4
+
+00:00:15,120  -->  00:00:22,440
+new coding patterns to how and to implement these agentic workflows.
+
+5
+
+00:00:22,440  -->  00:00:27,400
+There are also some new protocols that are being defined,
+
+6
+
+00:00:27,400  -->  00:00:31,240
+such as MCP and A2A,
+
+7
+
+00:00:31,240  -->  00:00:37,755
+which help defining what agents are and how agents communicate with each other.
+
+8
+
+00:00:37,755  -->  00:00:42,790
+Well, we're not going to go into the details of these new protocols,
+
+9
+
+00:00:42,790  -->  00:00:48,790
+we are going to look at a more general implementation of agentic workflows.
+
+10
+
+00:00:49,190  -->  00:00:56,390
+In general, we will define agents as classes in Python.
+
+11
+
+00:00:56,390  -->  00:00:59,190
+If you look at the code here,
+
+12
+
+00:00:59,190  -->  00:01:02,050
+I have an agent class.
+
+13
+
+00:01:02,050  -->  00:01:08,750
+Typically, this agent class will have a call to an LLM.
+
+14
+
+00:01:10,260  -->  00:01:17,140
+In this exercise, you've been asked to enhance one of the agents.
+
+15
+
+00:01:18,460  -->  00:01:24,380
+More specific agents are also defined as classes,
+
+16
+
+00:01:24,780  -->  00:01:30,380
+and they may have as an input parameter an agent,
+
+17
+
+00:01:30,780  -->  00:01:38,980
+or they might execute the code that we have in our class agent internally.
+
+18
+
+00:01:38,980  -->  00:01:44,780
+In that case, they will receive as an input different parameters.
+
+19
+
+00:01:46,030  -->  00:01:49,530
+Inside of the class agent,
+
+20
+
+00:01:49,530  -->  00:01:56,670
+we define functions to execute the different capabilities of agents.
+
+21
+
+00:01:58,310  -->  00:02:01,810
+In this case, we have a research agent,
+
+22
+
+00:02:01,810  -->  00:02:03,770
+we have a summarizer agent,
+
+23
+
+00:02:03,770  -->  00:02:07,110
+and we have a fact checker agent,
+
+24
+
+00:02:07,110  -->  00:02:09,990
+which is the one that you've been asked to enhance.
+
+25
+
+00:02:09,990  -->  00:02:19,510
+The solution to this exercise is changing the function inside of the fact checker agent.
+
+26
+
+00:02:20,210  -->  00:02:24,345
+In this case, you've been asked to add flags.
+
+27
+
+00:02:24,345  -->  00:02:32,250
+What we've done is we've defined flags inside of the function,
+
+28
+
+00:02:32,530  -->  00:02:39,275
+and we're returning flags as a return from the function,
+
+29
+
+00:02:39,275  -->  00:02:44,450
+and that adds the capability to the flag checker agent.
+
+30
+
+00:02:46,010  -->  00:02:52,630
+If we run our demo that has all of the agents included,
+
+31
+
+00:02:52,630  -->  00:03:00,060
+we will see that the output now has the information collected in the flags.
+
+32
+
+00:03:05,950  -->  00:03:09,130
+After running the code,
+
+33
+
+00:03:09,970  -->  00:03:14,850
+we can see the output from our new flags.

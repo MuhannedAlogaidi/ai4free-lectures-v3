@@ -1,0 +1,1383 @@
+[
+  {
+    "id": 1,
+    "title": "MyProject: Production AI/RAG Step-by-Step Build Guide",
+    "created": "2026-10-05T00:23",
+    "audioSize": "0 MB",
+    "resources": [
+      {
+        "title": "uv documentation",
+        "url": "https://docs.astral.sh/uv/",
+        "steps": [
+          "1",
+          "1b",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "title": "FastAPI documentation",
+        "url": "https://fastapi.tiangolo.com/",
+        "steps": [
+          "7",
+          "8"
+        ]
+      },
+      {
+        "title": "Pydantic Settings",
+        "url": "https://docs.pydantic.dev/latest/concepts/pydantic_settings/",
+        "steps": [
+          "9"
+        ]
+      },
+      {
+        "title": "Python logging",
+        "url": "https://docs.python.org/3/library/logging.html",
+        "steps": [
+          "10"
+        ]
+      },
+      {
+        "title": "pytest documentation",
+        "url": "https://docs.pytest.org/en/stable/",
+        "steps": [
+          "11",
+          "22"
+        ]
+      },
+      {
+        "title": "FastAPI security",
+        "url": "https://fastapi.tiangolo.com/tutorial/security/",
+        "steps": [
+          "12"
+        ]
+      },
+      {
+        "title": "OpenAI API docs",
+        "url": "https://platform.openai.com/docs/overview",
+        "steps": [
+          "13",
+          "14"
+        ]
+      },
+      {
+        "title": "Qdrant documentation",
+        "url": "https://qdrant.tech/documentation/",
+        "steps": [
+          "15",
+          "16",
+          "17",
+          "18",
+          "27"
+        ]
+      },
+      {
+        "title": "LangChain documentation",
+        "url": "https://python.langchain.com/docs/introduction/",
+        "steps": [
+          "16",
+          "17",
+          "18",
+          "28"
+        ]
+      },
+      {
+        "title": "Docker documentation",
+        "url": "https://docs.docker.com/",
+        "steps": [
+          "19"
+        ]
+      },
+      {
+        "title": "Docker Compose",
+        "url": "https://docs.docker.com/compose/",
+        "steps": [
+          "20",
+          "21"
+        ]
+      },
+      {
+        "title": "Redis documentation",
+        "url": "https://redis.io/docs/latest/",
+        "steps": [
+          "20",
+          "33"
+        ]
+      },
+      {
+        "title": "GitHub Actions",
+        "url": "https://docs.github.com/en/actions",
+        "steps": [
+          "22",
+          "38"
+        ]
+      },
+      {
+        "title": "Ruff linter",
+        "url": "https://docs.astral.sh/ruff/",
+        "steps": [
+          "22",
+          "38"
+        ]
+      },
+      {
+        "title": "mypy type checker",
+        "url": "https://mypy.readthedocs.io/en/stable/",
+        "steps": [
+          "22",
+          "38"
+        ]
+      },
+      {
+        "title": "Amazon ECR",
+        "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html",
+        "steps": [
+          "23"
+        ]
+      },
+      {
+        "title": "AWS App Runner",
+        "url": "https://docs.aws.amazon.com/apprunner/latest/dg/what-is-apprunner.html",
+        "steps": [
+          "23"
+        ]
+      },
+      {
+        "title": "FastAPI CORS",
+        "url": "https://fastapi.tiangolo.com/tutorial/cors/",
+        "steps": [
+          "23"
+        ]
+      },
+      {
+        "title": "Ragas evaluation",
+        "url": "https://docs.ragas.io/",
+        "steps": [
+          "31",
+          "38"
+        ]
+      },
+      {
+        "title": "OWASP Top 10 for LLM Apps",
+        "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+        "steps": [
+          "32"
+        ]
+      },
+      {
+        "title": "LangGraph documentation",
+        "url": "https://langchain-ai.github.io/langgraph/",
+        "steps": [
+          "35",
+          "36",
+          "37"
+        ]
+      },
+      {
+        "title": "Locust load testing",
+        "url": "https://docs.locust.io/en/stable/",
+        "steps": [
+          "39"
+        ]
+      }
+    ],
+    "steps": [
+      "Step 1: Create Project",
+      "Alternative Step 1: Custom Environment",
+      "Step 2: Install Dependencies",
+      "Step 3: Verify Setup",
+      "Step 4: Create Data Structure",
+      "Step 5: Create Notebook Structure",
+      "Step 6: Create Project Workspaces",
+      "Step 7: Create Source Structure",
+      "Step 8: Build Production API",
+      "Step 9: Configure Environment",
+      "Step 10: Add Logging and Errors",
+      "Step 11: Build Testing Foundation",
+      "Step 12: Add Security Foundation",
+      "Step 13: Connect Real AI Provider",
+      "Step 14: Add Embeddings",
+      "Step 15: Add Vector Store",
+      "Step 16: Build Ingestion Pipeline",
+      "Step 17: Build Retrieval Pipeline",
+      "Step 18: Build RAG Pipeline",
+      "Step 19: Dockerize Application",
+      "Step 20: Build Docker Compose Stack",
+      "Step 21: Validate Container Health",
+      "Step 22: Build CI Pipeline",
+      "Step 23: Lightweight AWS Deployment",
+      "Step 27: Add Hybrid Retrieval",
+      "Step 28: Add Query Rewriting",
+      "Step 29: Add Reranking",
+      "Step 30: Add Citations",
+      "Step 31: Add RAG Evaluation",
+      "Step 32: Add Guardrails",
+      "Step 33: Add Caching",
+      "Step 34: Add Observability",
+      "Step 35: Add LangGraph Workflows",
+      "Step 36: Add Agents and Tools",
+      "Step 37: Build Agentic RAG",
+      "Step 38: Add Quality Gates",
+      "Step 39: Add Load Testing",
+      "Step 40: Run Production Readiness Review"
+    ],
+    "file": "01-myproject.md"
+  },
+  {
+    "id": 2,
+    "title": "uv Practical Lectures — Python and Project Management",
+    "created": "2026-10-05T01:31",
+    "audioSize": "0 MB",
+    "resources": [
+      {
+        "title": "uv documentation (home)",
+        "url": "https://docs.astral.sh/uv/",
+        "steps": [
+          "1.1"
+        ]
+      },
+      {
+        "title": "uv feature overview",
+        "url": "https://docs.astral.sh/uv/getting-started/features/",
+        "steps": [
+          "8.1"
+        ]
+      },
+      {
+        "title": "uv docs: Installation",
+        "url": "https://docs.astral.sh/uv/getting-started/installation/",
+        "steps": [
+          "1.1"
+        ]
+      },
+      {
+        "title": "uv docs: Managing Python",
+        "url": "https://docs.astral.sh/uv/guides/install-python/",
+        "steps": [
+          "1.2"
+        ]
+      },
+      {
+        "title": "uv docs: Python versions",
+        "url": "https://docs.astral.sh/uv/concepts/python-versions/",
+        "steps": [
+          "1.3"
+        ]
+      },
+      {
+        "title": "uv docs: Projects",
+        "url": "https://docs.astral.sh/uv/guides/projects/",
+        "steps": [
+          "2.1",
+          "4.2"
+        ]
+      },
+      {
+        "title": "uv docs: Dependencies",
+        "url": "https://docs.astral.sh/uv/concepts/projects/dependencies/",
+        "steps": [
+          "2.2"
+        ]
+      },
+      {
+        "title": "uv docs: Running scripts",
+        "url": "https://docs.astral.sh/uv/guides/scripts/",
+        "steps": [
+          "2.3",
+          "3.1"
+        ]
+      },
+      {
+        "title": "uv docs: Locking and syncing",
+        "url": "https://docs.astral.sh/uv/concepts/projects/sync/",
+        "steps": [
+          "2.4"
+        ]
+      },
+      {
+        "title": "uv docs: Environments",
+        "url": "https://docs.astral.sh/uv/pip/environments/",
+        "steps": [
+          "4.1"
+        ]
+      },
+      {
+        "title": "uv docs: Inspecting environments",
+        "url": "https://docs.astral.sh/uv/pip/inspection/",
+        "steps": [
+          "4.3"
+        ]
+      },
+      {
+        "title": "uv docs: Locking environments",
+        "url": "https://docs.astral.sh/uv/pip/compile/",
+        "steps": [
+          "4.4"
+        ]
+      },
+      {
+        "title": "uv docs: Tools",
+        "url": "https://docs.astral.sh/uv/guides/tools/",
+        "steps": [
+          "5.1"
+        ]
+      },
+      {
+        "title": "uv docs: Jupyter integration",
+        "url": "https://docs.astral.sh/uv/guides/integration/jupyter/",
+        "steps": [
+          "6.1"
+        ]
+      },
+      {
+        "title": "uv docs: Publishing packages",
+        "url": "https://docs.astral.sh/uv/guides/package/",
+        "steps": [
+          "7.1"
+        ]
+      }
+    ],
+    "steps": [
+      "1.1 Install uv",
+      "1.2 Install and inspect Python",
+      "1.3 Understand Python selection versus compatibility",
+      "2.1 Create a project and select Python",
+      "2.2 Add, inspect, and remove dependencies",
+      "2.3 Run your own Python file",
+      "2.4 Reproduce or update an environment",
+      "3.1 Give a standalone script its own dependencies",
+      "4.1 Create only a virtual environment",
+      "4.2 Work with an existing requirements file",
+      "4.3 Inspect a manually managed environment",
+      "4.4 Lock a requirements-based tutorial",
+      "5.1 Run a tool without adding it to your project",
+      "6.1 Use notebooks with the project environment",
+      "7.1 Recognize building and publishing",
+      "8.1 Locate storage and perform optional maintenance",
+      "8.2 Recognize common problems",
+      "Practice checkpoint"
+    ],
+    "file": "02-uv.md"
+  },
+  {
+    "id": 3,
+    "title": "Python Project - RAG Style",
+    "created": "2026-10-05T02:00",
+    "audioSize": "0 MB",
+    "resources": [
+      {
+        "title": "uv documentation",
+        "url": "https://docs.astral.sh/uv/",
+        "note": "Official uv guide: install, projects, lockfile.",
+        "steps": [
+          "1",
+          "3"
+        ]
+      },
+      {
+        "title": "Git documentation",
+        "url": "https://git-scm.com/doc",
+        "note": "Official Git reference and book.",
+        "steps": [
+          "2",
+          "15"
+        ]
+      },
+      {
+        "title": "Python 3.12 documentation",
+        "url": "https://docs.python.org/3.12/",
+        "note": "Official Python language and library reference.",
+        "steps": [
+          "5",
+          "6",
+          "9"
+        ]
+      },
+      {
+        "title": "FastAPI documentation",
+        "url": "https://fastapi.tiangolo.com/",
+        "note": "Official FastAPI tutorial and reference.",
+        "steps": [
+          "8",
+          "8.1",
+          "8.2",
+          "8.3",
+          "8.4"
+        ]
+      },
+      {
+        "title": ".env master key template",
+        "file": "assets/files/env-masterkey.txt",
+        "size": "194 KB",
+        "note": "Every API key name, with where to get it",
+        "steps": [
+          "3"
+        ]
+      },
+      {
+        "title": "gitignore.txt",
+        "file": "assets/files/step2/gitignore.txt",
+        "size": "1 KB",
+        "note": "Full .gitignore after Step 2. Rename to .gitignore",
+        "steps": [
+          "2"
+        ]
+      },
+      {
+        "title": "pyproject.toml",
+        "file": "assets/files/step3/pyproject.toml",
+        "size": "1 KB",
+        "note": "Full pyproject.toml after Step 3",
+        "steps": [
+          "3"
+        ]
+      },
+      {
+        "title": "env-example.txt",
+        "file": "assets/files/step3/env-example.txt",
+        "size": "1 KB",
+        "note": "Full .env.example. Rename to .env.example",
+        "steps": [
+          "3"
+        ]
+      },
+      {
+        "title": "main.py",
+        "file": "assets/files/step5/main.py",
+        "size": "6 KB",
+        "note": "Full src/main.py after Step 5: Sections 1 to 10",
+        "steps": [
+          "5"
+        ]
+      },
+      {
+        "title": "chat.py",
+        "file": "assets/files/step5/chat.py",
+        "size": "1 KB",
+        "note": "Full src/chat.py: the mini chat",
+        "steps": [
+          "5"
+        ]
+      },
+      {
+        "title": "pyproject.toml",
+        "file": "assets/files/step5/pyproject.toml",
+        "size": "1 KB",
+        "note": "Full pyproject.toml after Step 5",
+        "steps": [
+          "5"
+        ]
+      },
+      {
+        "title": "main.py",
+        "file": "assets/files/step6/main.py",
+        "size": "6 KB",
+        "note": "Full src/main.py after Step 6: Sections 1 to 12",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "pdf_manager.py",
+        "file": "assets/files/step6/pdf_manager.py",
+        "size": "2 KB",
+        "note": "Full src/pdf_manager.py",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "csv_manager.py",
+        "file": "assets/files/step6/csv_manager.py",
+        "size": "3 KB",
+        "note": "Full src/csv_manager.py",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "make_sample_pdf.py",
+        "file": "assets/files/step6/make_sample_pdf.py",
+        "size": "1 KB",
+        "note": "Full scripts/make_sample_pdf.py",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "sample.csv",
+        "file": "assets/files/step6/sample.csv",
+        "size": "1 KB",
+        "note": "data/raw/sample.csv",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "pyproject.toml",
+        "file": "assets/files/step6/pyproject.toml",
+        "size": "1 KB",
+        "note": "Full pyproject.toml after Step 6",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "gitignore.txt",
+        "file": "assets/files/step6/gitignore.txt",
+        "size": "1 KB",
+        "note": "Full .gitignore after Step 6. Rename to .gitignore",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "create_notebooks.py",
+        "file": "assets/files/step7/create_notebooks.py",
+        "size": "13 KB",
+        "note": "Creates notebooks/: 11 topics, their subfolders, and 11 runnable samples. Save it in scripts/",
+        "steps": [
+          "7"
+        ]
+      },
+      {
+        "title": "pyproject.toml",
+        "file": "assets/files/step7/pyproject.toml",
+        "size": "1 KB",
+        "note": "Full pyproject.toml after Step 7",
+        "steps": [
+          "7"
+        ]
+      },
+      {
+        "title": "gitignore.txt",
+        "file": "assets/files/step7/gitignore.txt",
+        "size": "1 KB",
+        "note": "Full .gitignore after Step 7. Rename to .gitignore",
+        "steps": [
+          "7"
+        ]
+      },
+      {
+        "title": "schemas.py",
+        "file": "assets/files/step8/schemas.py",
+        "size": "1 KB",
+        "note": "Full src/api/schemas.py",
+        "steps": [
+          "8"
+        ]
+      },
+      {
+        "title": "routes.py",
+        "file": "assets/files/step8/routes.py",
+        "size": "2 KB",
+        "note": "Full src/api/routes.py",
+        "steps": [
+          "8"
+        ]
+      },
+      {
+        "title": "main.py",
+        "file": "assets/files/step8/main.py",
+        "size": "1 KB",
+        "note": "Full src/api/main.py (the API app, not src/main.py)",
+        "steps": [
+          "8"
+        ]
+      },
+      {
+        "title": "test_api.py",
+        "file": "assets/files/step8/test_api.py",
+        "size": "1 KB",
+        "note": "Full tests/test_api.py",
+        "steps": [
+          "8"
+        ]
+      },
+      {
+        "title": "pyproject.toml",
+        "file": "assets/files/step8/pyproject.toml",
+        "size": "1 KB",
+        "note": "Full pyproject.toml after Step 8",
+        "steps": [
+          "8"
+        ]
+      }
+    ],
+    "steps": [
+      "Step 1: Install uv",
+      "Step 2: Create the repo and the project",
+      "Step 3: Create Project with uv",
+      "Step 4: Understand the target structure",
+      "Step 5: Appetizers",
+      "Step 6: Utility modules",
+      "Step 7: Notebooks",
+      "Step 8: API layer",
+      "8.1 Practical API Course",
+      "8.2 Issue Tracker: Full Project Walkthrough",
+      "8.3 Products Inventory API: Raw SQLAlchemy Walkthrough",
+      "8.4 FastAPI Deep Dive",
+      "Step 9: Core services",
+      "Step 10: Milestone 1",
+      "Step 11: Running notebooks",
+      "Step 12: RAG ingestion pipeline",
+      "Step 13: RAG retrieval + generation",
+      "Step 14: Testing with pytest",
+      "Step 15: CI/CD with GitHub Actions",
+      "Step 16: Infra: Docker, Kubernetes, Terraform"
+    ],
+    "file": "03-python-project.md"
+  },
+  {
+    "id": 4,
+    "title": "my-project: Production RAG Setup Guide",
+    "created": "2026-10-05T02:25",
+    "audioSize": "0 MB",
+    "resources": [
+      {
+        "title": "uv documentation",
+        "url": "https://docs.astral.sh/uv/",
+        "steps": [
+          "1",
+          "2",
+          "8",
+          "11",
+          "12",
+          "13"
+        ]
+      },
+      {
+        "title": "GitHub: create a repository",
+        "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository",
+        "steps": [
+          "2"
+        ]
+      },
+      {
+        "title": "Jupyter documentation",
+        "url": "https://docs.jupyter.org/en/latest/",
+        "steps": [
+          "5",
+          "15",
+          "16"
+        ]
+      },
+      {
+        "title": "FastAPI documentation",
+        "url": "https://fastapi.tiangolo.com/",
+        "steps": [
+          "17"
+        ]
+      }
+    ],
+    "steps": [
+      "Step 1: Install uv",
+      "Step 2: Create GitHub repo + clone + uv init",
+      "Step 3: Understand the target structure",
+      "Step 4: Create data folders",
+      "Step 5: Create notebook folders",
+      "Step 6: Create the src/ package",
+      "Step 7: Create tests, scripts, and docs",
+      "Step 8: Configure pyproject.toml",
+      "Step 9: Create .env.example",
+      "Step 10: Update .gitignore",
+      "Step 11: Install scaffold dependencies",
+      "Step 12: Install RAG course dependencies",
+      "Step 13: Install notebook and tutorial dependencies",
+      "Step 14: Configure your .env file",
+      "Step 15: Register the Jupyter kernel",
+      "Step 16: Start Jupyter Lab",
+      "Step 17: Start the FastAPI server",
+      "Step 18: Verify everything works"
+    ],
+    "file": "04-my-project-setup.md"
+  },
+  {
+    "id": 5,
+    "title": "Content Blocks Showcase",
+    "created": "2026-10-06T09:00",
+    "audioSize": "0 MB",
+    "resources": [
+      {
+        "title": "Mermaid diagram syntax",
+        "url": "https://mermaid.js.org/intro/",
+        "steps": [
+          "4"
+        ]
+      }
+    ],
+    "steps": [
+      "Step 1: Callouts",
+      "Step 2: Collapsible and quotes",
+      "Step 3: Code",
+      "Step 4: Structure"
+    ],
+    "file": "05-showcase.md"
+  },
+  {
+    "id": 6,
+    "title": "RAG Fast Track: Build a Production RAG Starter in 8 Steps",
+    "created": "2026-10-09T12:00",
+    "audioSize": "0 MB",
+    "resources": [
+      {
+        "title": "uv documentation",
+        "url": "https://docs.astral.sh/uv/",
+        "steps": [
+          "2",
+          "4"
+        ]
+      },
+      {
+        "title": "LangChain documentation",
+        "url": "https://python.langchain.com/",
+        "steps": [
+          "1",
+          "6"
+        ]
+      },
+      {
+        "title": "LlamaIndex documentation",
+        "url": "https://docs.llamaindex.ai/",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "Chroma documentation",
+        "url": "https://docs.trychroma.com/",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "FAISS",
+        "url": "https://github.com/facebookresearch/faiss",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "Qdrant documentation",
+        "url": "https://qdrant.tech/documentation/",
+        "steps": [
+          "6"
+        ]
+      },
+      {
+        "title": "FastAPI documentation",
+        "url": "https://fastapi.tiangolo.com/",
+        "steps": [
+          "5",
+          "8"
+        ]
+      },
+      {
+        "title": "GitHub Actions",
+        "url": "https://docs.github.com/actions",
+        "steps": [
+          "7"
+        ]
+      },
+      {
+        "title": "Amazon ECS Express Mode",
+        "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-overview.html",
+        "steps": [
+          "7"
+        ]
+      },
+      {
+        "title": "AWS App Runner",
+        "url": "https://docs.aws.amazon.com/apprunner/",
+        "steps": [
+          "7"
+        ]
+      }
+    ],
+    "steps": [
+      "Step 1: What RAG is, and the project structure",
+      "Step 2: GitHub repo and the uv project",
+      "Step 3: Folder structure, data and notebooks",
+      "Step 4: Add and test the libraries",
+      "Step 5: Foundations: settings, logging and the entry point",
+      "Step 6: FastAPI skeleton",
+      "Step 7: Docker, CI/CD and AWS",
+      "Step 8: A simple UI to test the services"
+    ],
+    "file": "06-rag-fasttrack.md"
+  },
+  {
+    "id": 7,
+    "title": "Udacity Agentic Nano-Degree",
+    "created": "2026-10-09T14:00",
+    "audioSize": "0 MB",
+    "resources": [
+      {
+        "title": "lesson_2_lib.py",
+        "file": "assets/files/udacity/lesson_2_lib.py",
+        "size": "28 KB",
+        "note": "Helper functions and synthetic data for the Demand-Spike Detective exercise",
+        "steps": [
+          "12.3"
+        ]
+      },
+      {
+        "title": "lesson_2_lib.py (Part II)",
+        "file": "assets/files/udacity/part-ii/lesson_2_lib.py",
+        "size": "28 KB",
+        "note": "Helper functions and synthetic data for the Demand-Spike Detective Part II (ReAct)",
+        "steps": [
+          "12.4"
+        ]
+      }
+    ],
+    "steps": [
+      "Introduction",
+      "Knowledge Check: Are You Ready?",
+      "The Role of Prompting in Agentic AI with Python and OpenAI",
+      "Exercise: Organize Your Workspace",
+      "Exercise: Model Selection",
+      "Role-Based Prompting",
+      "Evaluating Agent Personas",
+      "Apply Role-Based Prompts to Different Domains",
+      "Implementing Role-Based Prompting with Python",
+      "Exercise: Historical Figure Persona",
+      "Chain-of-Thought and ReACT Prompting",
+      "11.1 ReACT Prompting",
+      "11.2 Quiz: Chain-of-Thought and ReAct",
+      "11.3 Summary / Congratulations!",
+      "Chain-of-Thought and ReACT Prompting with Python",
+      "12.1 Chain-of-Thought and ReACT Prompting with Python",
+      "12.2 Crafting ReACT Prompts in Python",
+      "12.3 Exercise: COT Prompting",
+      "12.4 Exercise: ReACT Prompting",
+      "Prompt Instruction Refinement",
+      "13.1 Best Practices",
+      "13.2 Quiz",
+      "13.3 Summary",
+      "Applying Prompt Instruction Refinement with Python",
+      "14.1 Prompt Instruction Refinement",
+      "14.2 Exercise",
+      "14.3 Summary",
+      "Chaining Prompts for Agentic Reasoning",
+      "15.1 Prompt Chaining",
+      "15.2 Output Validation: Gate Checks",
+      "15.3 Quiz",
+      "15.4 Summary"
+    ],
+    "file": "07-udacity-agentic-nanodegree.md",
+    "home": {
+      "label": "Course 1",
+      "estimate": "Estimated 1 hour, 1 minute remaining",
+      "modules": [
+        {
+          "title": "Prompting for Effective LLM Reasoning and Planning",
+          "description": "Go beyond basic chatbots and learn to engineer sophisticated AI agents. Learn advanced prompting techniques that power modern AI. You'll master Chain-of-Thought, ReAct, and feedback loops to build systems that can reason, plan, and solve complex problems. Through hands-on exercises, you will transform generic AI into specialized, reliable tools, culminating in building a multi-agent travel planner from scratch.",
+          "project": "Project: AgentsVille Trip Planner: A Multi-Agent Travel Assistant System",
+          "status": "Overdue",
+          "lessons": [
+            {
+              "type": "Lesson",
+              "title": "Introduction to Prompting for Effective LLM Reasoning and Planning",
+              "description": "Introduces the core concepts of Agentic AI, the course structure, prerequisites, and learning environment.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "The Role of Prompting in Agentic AI with Python and OpenAI",
+              "description": "Learn what AI Agents are and how they work. Understand the critical role prompting plays in guiding them to reason, plan, and act to achieve goals.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Role-Based Prompting",
+              "description": "Explains the theory of using roles or personas to control the tone, style, and expertise of an LLM's output.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Role-Based Prompting with Python",
+              "description": "Provides hands-on practice in iteratively developing a role-based prompt to create a believable historical figure persona.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Chain-of-Thought and ReACT Prompting",
+              "description": "Explains the conceptual frameworks for Chain-of-Thought (CoT) for guided reasoning and ReAct (Reason+Act) for enabling agents to plan and take actions.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Applying COT and ReACT Prompting with Python",
+              "description": "Provides hands-on practice implementing both CoT and ReAct prompts to solve a retail analytics problem.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Prompt Instruction Refinement",
+              "description": "Explains the theory of systematically refining prompt instructions by modifying components like Role, Task, Context, Examples, and Output Format.",
+              "steps": [
+                "13",
+                "13.1",
+                "13.2",
+                "13.3"
+              ]
+            },
+            {
+              "type": "Lesson",
+              "title": "Applying Prompt Instruction Refinement with Python",
+              "description": "Provides hands-on practice iteratively refining a prompt to transform a generic recipe analyzer into a precise dietary consultant that produces structured JSON.",
+              "steps": [
+                "14",
+                "14.1",
+                "14.2",
+                "14.3"
+              ]
+            },
+            {
+              "type": "Lesson",
+              "title": "Chaining Prompts for Agentic Reasoning",
+              "description": "Explains the conceptual framework for building multi-step AI workflows by linking the output of one prompt to the input of the next, and the importance of validation.",
+              "steps": [
+                "15",
+                "15.1",
+                "15.2",
+                "15.3",
+                "15.4"
+              ]
+            },
+            {
+              "type": "Lesson",
+              "title": "Chaining Prompts with Python",
+              "description": "Provides hands-on practice implementing a three-stage prompt chain with Pydantic-based gate checks to automate an insurance claim triage process.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "LLM Feedback Loops",
+              "description": "Explains the conceptual framework for building self-improving systems where an agent uses feedback from its own actions to iteratively refine its output.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing LLM Feedback Loops with Python",
+              "description": "Provides hands-on practice building an automated feedback loop where an AI generates Python code, has it tested against a unit test suite, and uses the test results as feedback to debug itself.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Congratulations!",
+              "description": "Course review",
+              "steps": []
+            },
+            {
+              "type": "Project",
+              "title": "Project: AgentsVille Trip Planner: A Multi-Agent Travel Assistant System",
+              "description": "In this project, you'll build an agentic travel assistant system, the \"AgentsVille Trip Planner\"",
+              "steps": [],
+              "status": "Overdue",
+              "remaining": "1 hour remaining"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Agentic AI - Andrew Ng",
+    "created": "2026-10-14T09:00",
+    "audioSize": "0 MB",
+    "resources": [
+      {
+        "title": "Agentic AI course (DeepLearning.AI)",
+        "url": "https://learn.deeplearning.ai/courses/agentic-ai",
+        "note": "Official course page with videos, quizzes and labs.",
+        "steps": [
+          "1"
+        ]
+      },
+      {
+        "title": "Module 1 slides",
+        "file": "assets/files/agentic-ai/m1-slides.pdf",
+        "size": "1.6 MB",
+        "note": "Andrew Ng's slides for Module 1: Introduction to Agentic Workflows",
+        "steps": [
+          "2"
+        ]
+      },
+      {
+        "title": "requirements.txt",
+        "file": "assets/files/agentic-ai/requirements.txt",
+        "size": "1 KB",
+        "note": "Libraries for running the ungraded labs locally",
+        "steps": [
+          "2"
+        ]
+      }
+    ],
+    "steps": [
+      "Introduction",
+      "Module 1: Introduction to Agentic Workflows"
+    ],
+    "file": "08-agentic-ai-andrew-ng.md"
+  },
+  {
+    "id": 9,
+    "title": "AI Prompting for Everyone",
+    "created": "2026-10-14T12:00",
+    "audioSize": "0 MB",
+    "resources": [],
+    "steps": [],
+    "file": "09-ai-prompting-for-everyone.md"
+  },
+  {
+    "id": 10,
+    "title": "Retrieval Augmented Generation (RAG)",
+    "created": "2026-10-14T12:30",
+    "audioSize": "0 MB",
+    "resources": [
+      {
+        "title": "Retrieval Augmented Generation (RAG) course page",
+        "url": "https://www.deeplearning.ai/courses/retrieval-augmented-generation",
+        "note": "Official DeepLearning.AI course page",
+        "steps": [
+          "1"
+        ]
+      }
+    ],
+    "steps": [
+      "Course Content and Roadmap",
+      "Module 1: RAG Overview"
+    ],
+    "file": "10-retrieval-augmented-generation.md"
+  },
+  {
+    "id": 12,
+    "title": "Agentic Workflows",
+    "created": "2026-10-22T09:00",
+    "audioSize": "0 MB",
+    "file": "12-udacity-agentic-workflows.md",
+    "steps": [
+      "Introduction",
+      "Constructing Agentic Systems with Python",
+      "Quiz: Implementing Agentic Workflows with Python",
+      "Demo: Sequential Agentic Workflow in Python",
+      "Exercise: Fact Checker Agent",
+      "Solution: Fact Checker Agent",
+      "Summary"
+    ],
+    "resources": [],
+    "home": {
+      "label": "Course 2",
+      "estimate": "Estimated 1 hour, 1 minute remaining",
+      "modules": [
+        {
+          "title": "Agentic Workflows",
+          "description": "Go beyond simple automation and learn to architect intelligent systems. In this course, you'll master the art of designing and building agentic workflows using Python. You'll explore core patterns like Prompt Chaining, Routing, and Parallelization to create teams of AI agents that can reason, plan, and act to solve complex problems. You will finish by building a complete, agentic project management system, proving your ability to translate high-level goals into powerful, adaptive AI solutions.",
+          "project": "AI-Powered Agentic Workflow for Project Management",
+          "status": "Overdue",
+          "lessons": [
+            {
+              "type": "Lesson",
+              "title": "Introduction to Agentic Workflows",
+              "description": "Introduces the foundational concepts of AI agents and agentic workflows, setting the stage for the course. It covers prerequisites, the course environment, and how to use the necessary API keys.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Understanding Agentic Workflows",
+              "description": "Explores what defines a modern AI agent, its core components (Persona, Knowledge, Tools, Interaction), and the different types of agents based on their LLM interaction model.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Workflow Modeling",
+              "description": "Design and visualize agentic workflows.  Learn common agent types as building blocks for creating visual workflow diagrams.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Agentic Workflow Modeling",
+              "description": "Design and visualize agentic workflows.  Learn common agent types as building blocks for creating visual workflow diagrams.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Workflow Implementation",
+              "description": "Covers the practical aspects of translating agentic workflow models into Python code. Students learn to structure agent logic, define agent classes, and orchestrate their interactions.",
+              "steps": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
+              ]
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Workflow Patterns:  Prompt Chaining Workflow",
+              "description": "Introduces the Prompt Chaining pattern for breaking down complex tasks into a sequence of smaller, dependent steps. It covers strategies for task decomposition, validation, and context management.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Agentic Prompt Chaining Workflows with Python",
+              "description": "Provides hands-on experience in implementing the Prompt Chaining pattern. Students build a multi-agent chain to solve a problem where information is passed sequentially.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Workflow Patterns: Routing",
+              "description": "Teaches the Routing pattern, which involves classifying incoming tasks and directing them to the most appropriate specialized agent or processing path.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Agentic Routing Workflows with Python",
+              "description": "Students implement a routing system where a router agent uses an LLM to classify a query and then dispatches it to the correct specialist agent, which may involve orchestrating sub-tasks.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Workflow Patterns: Parallelization",
+              "description": "Introduces the Parallelization pattern for executing multiple agent tasks concurrently. It covers strategies for task decomposition (sharding, aspect-based) and result aggregation.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Agentic Parallelization Workflows with Python",
+              "description": "Students implement a parallel workflow using Python's threading module, where multiple specialist agents analyze a document concurrently, and a synthesizer agent combines their findings.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Workflow Patterns:  Evaluator-Optimizer Workflow",
+              "description": "Focuses on the Evaluator-Optimizer pattern, an iterative process of generation, critique, and refinement to improve output quality. It emphasizes clear evaluation criteria and actionable feedback.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Agentic Evaluator-Optimizer Workflows with Python",
+              "description": "Students build a two-agent system (a creator and a critic) that works in a loop. The creator generates a solution, and the critic provides feedback until the solution meets all constraints.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Workflow Patterns Orchestrator-Workers Workflow",
+              "description": "Introduces the advanced Orchestrator-Workers pattern, where a central agent dynamically plans, delegates, and synthesizes the work of multiple specialized worker agents.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Agentic Orchestrator-Workers Pattern in Python",
+              "description": "Students implement a market analysis report generator where an Orchestrator agent creates a plan, assigns tasks to news, competitor, and trend analysis workers, and then synthesizes their findings.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Course Review",
+              "description": "Course review.",
+              "steps": []
+            },
+            {
+              "type": "Project",
+              "title": "AI-Powered Agentic Workflow for Project Management",
+              "description": "In this project you'll build a comprehensive, reusable library of different agent types and then use them to create a multi-step agentic workflow to manage a technical project.",
+              "steps": [],
+              "remaining": "1 hour remaining",
+              "status": "Overdue"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "title": "Udacity Building Agents",
+    "created": "2026-10-21T09:00",
+    "audioSize": "0 MB",
+    "file": "11-udacity-building-agents.md",
+    "steps": [],
+    "resources": [],
+    "home": {
+      "label": "Course 3",
+      "estimate": "Estimated 11 hours, 10 minutes remaining",
+      "modules": [
+        {
+          "title": "Building Agents",
+          "description": "Build robust AI agents. Integrate tools via function calling, generate structured outputs with Pydantic, manage agent state, and utilize short-term and long-term memory. Create data-driven agents that interact with external APIs, search the web, query SQL databases, and perform agentic RAG for dynamic retrieval. Learn to evaluate agent performance for reliable, real-world applications.",
+          "project": "UdaPlay - An AI Research Agent for the Video Game Industry",
+          "status": "Due November 17, 2026",
+          "lessons": [
+            {
+              "type": "Lesson",
+              "title": "Introduction to Building Agents",
+              "description": "Get to know your course instructors, set up OpenAI resources, and get an overview of the course.",
+              "steps": [],
+              "remaining": "5 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Extending Agents with Tools",
+              "description": "Extend AI agents beyond text with tool integrations, enabling reliable real-time actions and data access.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Building Agents with Tools in Python",
+              "description": "Develop AI agents in Python using tools with OpenAI SDK. Interact through language models, build functionality-enhancing tools, and test via tool-augmented exercises.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Structured Outputs",
+              "description": "Discover structured outputs in AI: transform responses into actionable JSON for integration. Utilize schemas, parsers, and function calls to enhance reliability and automation in workflows.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Structured Outputs with Pydantic",
+              "description": "Master structured outputs with Pydantic and OpenAI SDK for LLMs. Learn parsing, type validation, and create validated AI agent responses in JSON format.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Agent State Management",
+              "description": "Explore agent state management with state machines. Learn how agents track user input, instructions, and tool use for complex workflows, ensuring adaptability and reliability.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Agent State Management with Python",
+              "description": "Master Python state machines: set up environment, define schemas, manage transitions, and run workflows. Explore advanced routing and loops for dynamic workflows.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Short-Term Agent Memory",
+              "description": "Explore short-term memory in AI agents, enhancing coherence via state, ephemeral, and ephemeral memory strategies for efficient context retention in active sessions.",
+              "steps": [],
+              "remaining": "15 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Adding Agent Memory with Python",
+              "description": "Learn to implement short-term memory in Python for coherent AI interactions via a ChatBot with personas, enabling session continuity and dynamic responses.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "External Tools and APIs",
+              "description": "Explore using external APIs for real-time data, dynamic actions, and authenticating agents. Discover MCP, a protocol standardizing AI’s tool interoperability and safety.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Integrating External Tools and APIs with OpenAI & Python",
+              "description": "Explore using OpenAI and Python to integrate external APIs, make GET/POST/PUT requests, manage API keys, and create agents for real-time data interactions.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Web Search Agents",
+              "description": "Equip agents to search web for real-time, unstructured info. Ground responses in evidence using APIs, handle noise, and avoid hallucination for credible answers.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Creating Web Search Agents with Python",
+              "description": "Build a web search agent using Python, Tavily API, to integrate real-time web data, parse results, and enhance language models' effectiveness.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Interacting with Databases",
+              "description": "Equip agents to access and modify structured data by using SQL for interaction and vector databases for semantic tasks, ensuring seamless integration with private systems.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Building Database Agents in Python",
+              "description": "Convert natural language to SQL using SQLAlchemy, SQLite, and text2SQL Agent to interact with databases efficiently through real-world examples and practical applications.",
+              "steps": [],
+              "remaining": "15 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Retrieval Augmented Generation",
+              "description": "Discover Agentic RAG: Enhance RAG by enabling reflection, query reformulation, and intelligent adaption for nuanced answers. Master retrieval, reasoning, and retry loops.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic RAG with Python and ChromaDB",
+              "description": "Explore agentic RAG in Python using ChromaDB, integrating AI with retrieval-augmented generation for intelligent document retrieval and processing with OpenAI embeddings.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Long-Term Agent Memory",
+              "description": "Explore long-term agent memory: understand semantic, episodic, and procedural memories. Learn storage strategies and best practices for personalized, coherent interactions.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Maintaining Long-Term Agent Memory in Python",
+              "description": "Implement long-term memory in Python agents using vector databases for enhanced user interaction, session persistence, and personalized responses.",
+              "steps": [],
+              "remaining": "15 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Agent Evaluation",
+              "description": "Agent Evaluation guides assessing an agent’s task completion, quality, tool use, and system metrics using response, step, or trajectory strategies to ensure reliable and efficient operations.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Evaluating Agents with Python",
+              "description": "Evaluate Python-based agents by setting environments, creating tools, designing test cases, and using diverse evaluation methods to enhance performance and design.",
+              "steps": [],
+              "remaining": "15 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Course Conclusion",
+              "description": "Congratulations on completing the course!",
+              "steps": [],
+              "remaining": "5 minutes remaining"
+            },
+            {
+              "type": "Project",
+              "title": "UdaPlay - An AI Research Agent for the Video Game Industry",
+              "description": "In this project, students will build a stateful AI Research Agent designed to explore the video game industry.",
+              "steps": [],
+              "remaining": "5 hours remaining",
+              "status": "Due November 17, 2026"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

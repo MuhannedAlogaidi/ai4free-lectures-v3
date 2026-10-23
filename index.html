@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI4Free Lectures V3</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/content.css">
+<link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#"><span class="mark">AI</span>AI4Free</a><span class="exp-badge">V3</span>
+    <nav class="nav"><a href="#">TECH</a><a href="#">FAQS</a><a href="#">BLOG</a><a href="#" data-action="openReference" id="refLink">REFERENCE</a></nav>
+    <button class="account" data-action="account">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="7" r="4.5"/><path d="M3 21c0-4.4 4-7 9-7s9 2.6 9 7z"/></svg>
+      <span class="email">trainee@ai4free.local</span>
+    </button>
+  </div>
+</header>
+
+<main class="layout">
+  <!-- Left -->
+  <aside class="left"><div class="card sticky">
+    <div class="usage">
+      <div id="usageText">0 of 0 steps completed</div>
+      <div class="bar"><span id="usageBar"></span></div>
+    </div>
+    <div class="side">
+      <div class="group">
+        <h4>Recent Lectures</h4>
+        <div id="recentList"></div>
+      </div>
+      <button class="item newlec" data-action="newLecture">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        New Lecture
+      </button>
+      <h4>All Lectures <span id="lecCount" style="color:var(--muted);font-weight:400"></span></h4>
+      <div class="all-list" id="allList"></div>
+    </div>
+  </div></aside>
+
+  <!-- Center -->
+  <article class="card doc">
+    <h1 id="title">DevOps from Zero to Hero: Build and Deploy a Production API</h1>
+    <div class="date" id="date"></div>
+    <div class="savestate" id="saveState" data-state="local"><span class="dot"></span><span id="saveText">Edits stay in this browser session. Use Download HTML to keep them.</span></div>
+    <div class="editbar-top" id="editTop">
+      <label class="switch" for="editModeChk"><input type="checkbox" id="editModeChk"><span class="sl" aria-hidden="true"></span><span>Edit mode</span></label>
+      <button class="btn ghost sm" data-action="advOpen">Advanced editor</button>
+      <span class="etip" id="editTip">Turn on Edit mode to edit one section in place.</span>
+    </div>
+    <div class="transcript" id="transcript"></div>
+    <section class="cta" id="cta">
+      <div class="cta-in">
+        <div><h2>Ready for the Next Lesson?</h2><p>Keep going with AI4Free and get...</p></div>
+        <div class="cta-row">
+          <svg class="cta-icon" viewBox="0 0 40 40"><path d="M20 4 4 12l16 8 16-8z" fill="#34d399"/><path d="M10 16v9c0 3 4.5 6 10 6s10-3 10-6v-9l-10 5z" fill="#6ee7b7"/><path d="M34 13v11" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/><circle cx="34" cy="26" r="2.5" fill="#34d399"/></svg>
+          <div><b>Free Courses, Always</b><span>Every lesson and learning path is free for every learner.</span></div>
+        </div>
+        <div class="cta-row">
+          <svg class="cta-icon" viewBox="0 0 40 40"><rect x="3" y="7" width="34" height="26" rx="4" fill="#fbbf24"/><rect x="3" y="7" width="34" height="7" rx="4" fill="#f59e0b"/><path d="M11 20l5 4-5 4M19 28h9" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Hands-on Projects</b><span>Build real APIs, pipelines and deployments step by step.</span></div>
+        </div>
+        <button class="btn" data-action="nextLesson">Start the next lesson</button>
+      </div>
+    </section>
+  </article>
+
+  <!-- Right -->
+  <aside class="right" id="drawer">
+    <button class="drawer-tab" id="drawerTab" data-action="toggleDrawer" aria-expanded="true" aria-label="Hide panel" title="Hide panel"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+    <div class="menu">
+    <div class="res" id="resBox">
+      <h4>Resources</h4>
+      <div id="resStep"></div>
+      <button class="tmore" id="resAllBtn" data-action="toggleRes"></button>
+      <div id="resAll" hidden></div>
+    </div>
+    <div class="sep"></div>
+    <h4>Export</h4>
+    <button class="act" data-action="pdf"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.75H7A2.25 2.25 0 0 0 4.75 5v14A2.25 2.25 0 0 0 7 21.25h10A2.25 2.25 0 0 0 19.25 19V8z"/><path d="M14 2.75V8h5.25"/><rect x="1.5" y="11.5" width="15" height="7.5" rx="1.5" fill="currentColor" stroke="none"/><text x="9" y="17.15" text-anchor="middle" font-size="5.6" font-weight="700" fill="#fff" stroke="none" font-family="Arial,Helvetica,sans-serif" letter-spacing=".1">PDF</text></svg><span class="t">Download PDF</span></button>
+    <button class="act" data-action="print"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8.5V3.75h10V8.5"/><rect x="3.25" y="8.5" width="17.5" height="8.5" rx="2"/><path d="M7 14h10v6.25H7z"/><path d="M17 11.5h.01"/></svg><span class="t">Print<small>Friendly or hand-drawn styles</small></span></button>
+    <button class="act" data-action="docx"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.75H7A2.25 2.25 0 0 0 4.75 5v14A2.25 2.25 0 0 0 7 21.25h10A2.25 2.25 0 0 0 19.25 19V8z"/><path d="M14 2.75V8h5.25"/><rect x="1.5" y="11.5" width="15" height="7.5" rx="1.5" fill="currentColor" stroke="none"/><text x="9" y="17.15" text-anchor="middle" font-size="5.6" font-weight="700" fill="#fff" stroke="none" font-family="Arial,Helvetica,sans-serif" letter-spacing=".1">DOC</text></svg><span class="t">Download DOCX</span></button>
+    <button class="act" data-action="txt"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.75H7A2.25 2.25 0 0 0 4.75 5v14A2.25 2.25 0 0 0 7 21.25h10A2.25 2.25 0 0 0 19.25 19V8z"/><path d="M14 2.75V8h5.25"/><rect x="1.5" y="11.5" width="15" height="7.5" rx="1.5" fill="currentColor" stroke="none"/><text x="9" y="17.15" text-anchor="middle" font-size="5.6" font-weight="700" fill="#fff" stroke="none" font-family="Arial,Helvetica,sans-serif" letter-spacing=".1">TXT</text></svg><span class="t">Download TXT</span></button>
+    <button class="act" data-action="downloadHtml"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg><span class="t">Download HTML<small>This page with all saved edits</small></span></button>
+    <button class="act" data-action="advanced"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v11"/><path d="m7.5 10 4.5 4.5 4.5-4.5"/><path d="M4 15.5v3A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5v-3"/></svg><span class="t">Advanced Export<small>Export in more formats</small></span></button>
+
+    <div class="sep"></div>
+    <h4>More</h4>
+    <button class="act" data-action="summary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.5 11.6 8a2 2 0 0 0 1.2 1.2l4.5 1.6-4.5 1.6a2 2 0 0 0-1.2 1.2L10 18.1l-1.6-4.5a2 2 0 0 0-1.2-1.2L2.7 10.8l4.5-1.6A2 2 0 0 0 8.4 8z"/><path d="M18.5 3v4M16.5 5h4M19 16v3M17.5 17.5h3"/></svg><span class="t">AI Assistant<small>Summarize, download or make notes</small></span></button>
+    <button class="act" data-action="translate"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5h9M7.5 3v2.5M10 5.5c-.8 3.6-3.2 6.6-6.5 8.2"/><path d="M5.5 9.2c1.2 2 3 3.6 5 4.5"/><path d="m12 21 4.5-10 4.5 10M13.6 17.5h5.8"/></svg><span class="t">Translate<small>Translate this lecture to 134+ languages</small></span></button>
+    <button class="act" data-action="share"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.4.3l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.7 1.7"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4-.3l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.7-1.7"/></svg><span class="t">Share Lecture</span></button>
+    <button class="act act-switch" data-action="toggleEditMode" id="rEditToggle" role="switch" aria-checked="false"><span class="mini-sw" aria-hidden="true"></span><span class="t">Edit mode<small>Pencil on each section</small></span></button>
+    <button class="act" data-action="advOpen"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/></svg><span class="t">Advanced editor<small>Edit and compare side by side</small></span></button>
+    <button class="act" data-action="audio"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6.5l11-2.5v11.5"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/></svg><span class="t">Download Audio<small>14.4 MB</small></span></button>
+    <button class="act" data-action="rename"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5V7"/><path d="M12 4v16M9 20h6"/></svg><span class="t">Rename File</span></button>
+    <button class="act danger" data-action="delete"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5h16"/><path d="M9.5 6.5V4.75A1.25 1.25 0 0 1 10.75 3.5h2.5a1.25 1.25 0 0 1 1.25 1.25V6.5"/><path d="m6 6.5.9 12.6A2 2 0 0 0 8.9 21h6.2a2 2 0 0 0 2-1.9L18 6.5"/><path d="M10 11v6M14 11v6"/></svg><span class="t">Delete File</span></button>
+  </div></aside>
+</main>
+<div class="scrim" data-action="toggleDrawer"></div>
+<div class="adv" id="adv" role="dialog" aria-modal="true" aria-label="Advanced editor">
+  <div class="adv-head">
+    <label for="secSel">Editing</label>
+    <select id="secSel"></select>
+    <span class="sp"></span>
+    <button class="btn ghost sm" data-action="history">History</button>
+    <button class="btn ghost sm" data-action="advDiscard" id="advDiscardBtn">Discard</button>
+    <button class="btn sm save" data-action="advSave">Save all</button>
+  </div>
+  <div class="adv-body">
+    <div class="adv-left">
+      <div class="tb" id="tb">
+        <select id="tbHeading" title="Heading"><option value="">Heading</option><option value="## ">Heading 2</option><option value="### ">Heading 3</option><option value="#### ">Heading 4</option></select>
+        <button data-action="fmt" data-w="**" title="Bold"><b>B</b></button>
+        <button data-action="fmt" data-w="*" title="Italic"><i>I</i></button>
+        <button data-action="fmt" data-w="__" title="Underline"><u>U</u></button>
+        <button data-action="fmt" data-w="==" title="Highlight"><mark style="background:#fef08a;padding:0 3px">H</mark></button>
+        <button data-action="fmt" data-w="`" title="Inline code" style="font-family:ui-monospace,Menlo,monospace">&lt;/&gt;</button>
+        <span class="div"></span>
+        <select id="tbColor" title="Text color"><option value="">Color</option></select>
+        <select id="tbBg" title="Background color"><option value="">Background</option></select>
+        <span class="div"></span>
+        <button class="ins" data-action="blkMenu" title="Insert a content block">+ Insert block</button>
+        <select id="tbCode" title="Insert code block"><option value="">Code block</option><option>bash</option><option>js</option><option>ts</option><option>python</option><option>yaml</option><option>json</option><option>dockerfile</option><option>sql</option><option>html</option><option>css</option><option>text</option></select>
+        <button data-action="ins" data-t="- " title="Bullet list">&bull; List</button>
+        <button data-action="ins" data-t="1. " title="Numbered list">1. List</button>
+        <button data-action="ins" data-t="&#10;---&#10;" title="Divider">&mdash;</button>
+        <span class="sp"></span>
+        <button data-action="cheat" title="Syntax help">? Syntax</button>
+      </div>
+      <textarea id="src" spellcheck="false" aria-label="Step source"></textarea>
+      <div class="adv-foot">Ctrl+S saves all · Esc closes</div>
+    </div>
+    <div class="adv-right">
+      <div class="tabs" role="tablist">
+        <button class="on" data-action="advTab" data-t="preview" role="tab">Preview</button>
+        <button data-action="advTab" data-t="original" role="tab">Original</button>
+        <button data-action="advTab" data-t="changes" role="tab">Changes <span class="cc" id="chgCount"></span></button>
+      </div>
+      <div class="adv-view" id="advViewWrap"><div class="transcript" id="advView"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"><div class="modal" id="modal"></div></div>
+<div class="blkmenu" id="blkMenu" hidden role="dialog" aria-modal="true" aria-label="Insert a content block"></div>
+<div class="toast" id="toast"></div>
+
+
+
+
+
+
+<!-- App: ES modules. js/app.js imports the rest; shared state lives in js/state.js. -->
+<script>/* Module scripts do not run from a file opened by double-click: say how to open the page instead. */
+if(location.protocol==="file:")document.addEventListener("DOMContentLoaded",function(){document.documentElement.classList.add("lec-ready");document.querySelector(".doc").innerHTML="<h1>Lectures not loaded</h1><p class='date'>Open this folder through a local server to load the lectures, for example <code>npx serve</code>.</p>";});</script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
