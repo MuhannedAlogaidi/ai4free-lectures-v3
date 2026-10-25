@@ -26,7 +26,7 @@ async function chapters(scope){
     const box = document.createElement("div"); box.innerHTML = renderContent(md);
     const h = box.querySelector("h2"); if(h) h.remove();   // the lecture name is the page title
     printableMatch(box); await drawDiagrams(box);
-    out.push({ num: stepNum(t, n - 1, steps), title: stepLabel(t) || t, box });
+    out.push({ num: stepNum(t, n - 1, steps, S.DATA), title: stepLabel(t) || t, box });
   }
   return out;
 }

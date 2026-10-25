@@ -42,7 +42,7 @@ export function setSaveState(state, text){
     error: "Last save failed. Your edit is kept in this session; try again or use Download HTML."
   })[state];
 }
-export const sectionLabel = (l, i) => { if(i === 0) return "Introduction"; const all = stepsOf(l), st = all[i-1] || ""; return stepBadge(st, i-1, all) + ". " + stepLabel(st); };
+export const sectionLabel = (l, i) => { if(i === 0) return "Introduction"; const all = stepsOf(l), st = all[i-1] || ""; return stepBadge(st, i-1, all, l) + ". " + stepLabel(st); };
 export async function persistSection(l, idx, md, prev, verb){
   const key = keyAt(l, idx), legacy = !!(LEGACY[l.id] && LEGACY[l.id][idx] !== undefined);
   EDITS[l.id] = EDITS[l.id] || {}; EDITS[l.id][key] = md; if(legacy) delete LEGACY[l.id][idx]; applyEdits(l);

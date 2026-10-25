@@ -232,3 +232,15 @@ button.rlink.rfile{width:calc(100% + 16px);background:none;border:0;font:inherit
 .pm-s{font-size:13.5px;color:#4b5563;line-height:1.45}
 .pm-sw{display:flex;gap:4px;margin-bottom:2px}.pm-sw i{width:22px;height:10px;border-radius:3px;border:1px solid rgba(0,0,0,.12)}
 @media (max-width:640px){.pm-grid,.pm-grid.two{grid-template-columns:1fr}}
+/* Lesson folders inside a session (index.json "groups") */
+.tgroup{margin:1px 0}
+.tgrp{display:flex;align-items:flex-start;gap:6px;width:100%;padding:5px 8px 5px 2px;border-radius:4px;font-size:14px;line-height:20px;font-weight:600;color:var(--heading);text-align:left}
+.tgrp:hover{background:var(--brand-soft)}
+.tgrp .gc{flex:none;width:16px;height:20px;display:grid;place-items:center;color:var(--muted)}
+.tgrp .gc svg{transition:transform .2s ease}
+.tgroup.open>.tgrp .gc svg{transform:rotate(90deg)}
+.tgrp .gn{flex:none;min-width:22px;height:20px;padding:0 5px;border-radius:5px;background:#eef1f5;font-size:11px;font-weight:700;display:grid;place-items:center;color:var(--heading)}
+.tgroup.here>.tgrp .gn{background:var(--brand);color:#fff}
+.tgrp .gt{min-width:0}
+.tgsteps{list-style:none;margin:0 0 4px;padding:0 0 0 14px;display:none}
+.tgroup.open>.tgsteps{display:block}

@@ -3,7 +3,7 @@ import { S } from "./state.js";
 import { LECTURES, ensureLoaded, loadError, loadIndex } from "./content-loader.js";
 import { COLORS, HINT_TYPES, PALETTE, chkMsg, codeStore, inline, plainText, renderContent, runDiagrams } from "./markdown.js";
 import { getSteps, keysOf, splitSections } from "./sections.js";
-import { restoreDoc, isDone, stepBadge, CHECK, doneBtn, doneCount, doneSet, expanded, keepSideScroll, openLecture, refreshTree, render, renderLectures, renderResources, revealActive, showAll, showStep, updateProgress } from "./nav.js";
+import { restoreDoc, isDone, stepBadge, openGroups, CHECK, doneBtn, doneCount, doneSet, expanded, keepSideScroll, openLecture, refreshTree, render, renderLectures, renderResources, revealActive, showAll, showStep, updateProgress } from "./nav.js";
 import { CAN_WRITE, HIST_VIEW, STORE, TITLES, UID, historyModal, initStore, loadLocalResponses, persistSection, resetSection, saveProgress, saveResponses, sectionLabel } from "./store.js";
 import { $ta, BLOCKS, blkListHtml, clearDraft, closeBlk, closeEditors, editMode, homeToolbar, initEditor, inlineCtx, insertLine, loadSection, offerDraft, openInline, preview, renderAdv, renderBlkMenu, setEditMode, setupEditor, taInsert, validateStep, wrapSel } from "./editor.js";
 import { asDoc, asJson, asMd, asText, buildBundle, withAssetsInline } from "./export.js";
@@ -264,6 +264,9 @@ export const actions = {
     const go = () => { showStep(n); if(window.innerWidth <= 760) setDrawer(false); };
     if(!S.DATA || S.DATA.id !== lid){ const p = openLecture(lid); if(p) return p.then(() => { if(S.DATA && S.DATA.id === lid) go(); }); }
     go(); },
+  toggleGroup(b){ const k = b.dataset.key, li = b.closest(".tgroup"), open = !li.classList.contains("open");
+    openGroups.delete(k); openGroups.delete("-" + k); openGroups.add(open ? k : "-" + k);
+    li.classList.toggle("open", open); b.setAttribute("aria-expanded", open); },
   toggleMore(b){ const id = +b.dataset.id; showAll.has(id) ? showAll.delete(id) : showAll.add(id); keepSideScroll(renderLectures); revealActive(); },
   toggleDone(){ const d = doneSet(), total = getSteps(S.DATA.content).length, key = keysOf(S.DATA)[S.curStep-1];
     if(!key) return;
@@ -417,7 +420,7 @@ export async function openHome(id){
 }
 export function renderHome(){
   const l = S.DATA, h = l.home, steps = getSteps(l.content), total = steps.length;
-  const idxOf = b => steps.findIndex((t, i) => stepBadge(t, i, steps) === String(b));
+  const idxOf = b => steps.findIndex((t, i) => stepBadge(t, i, steps, l) === String(b));
   const all = total ? Math.round(doneCount(l) / total * 100) : 0;
   let resumeSet = false, num = 0;
   const lesson = ls => {

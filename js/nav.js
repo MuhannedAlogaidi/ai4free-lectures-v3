@@ -33,7 +33,7 @@ export function paginate(){
     t.appendChild(sec);
   }
   if(total){
-    const steps = getSteps(S.DATA.content), lab = i => stepBadge(steps[i]||"",i,steps) + ". " + stepLabel(steps[i]||"");
+    const steps = getSteps(S.DATA.content), lab = i => stepBadge(steps[i]||"",i,steps,S.DATA) + ". " + stepLabel(steps[i]||"");
     const nav = document.createElement("div"); nav.className = "pager";
     const L = "<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M15 6l-6 6 6 6'/></svg>";
     const R = "<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='m9 6 6 6-6 6'/></svg>";
@@ -71,7 +71,7 @@ export function updateProgress(){
 export function renderResources(){
   const box = $("resBox"); const list = (S.DATA && S.DATA.resources) || [];
   box.hidden = !list.length; if(!list.length) return;
-  const steps = getSteps(S.DATA.content), badge = stepBadge(steps[S.curStep-1]||"", S.curStep-1, steps);
+  const steps = getSteps(S.DATA.content), badge = stepBadge(steps[S.curStep-1]||"", S.curStep-1, steps, S.DATA);
   const host = u => { try { return new URL(u).hostname.replace(/^www\./,""); } catch(e){ return u; } };
   const EXT = "<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'><path d='M14 4h6v6M20 4l-9 9'/><path d='M18 14v4.5A1.5 1.5 0 0 1 16.5 20h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10'/></svg>";
   const DL = "<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3.5v11'/><path d='m7.5 10 4.5 4.5 4.5-4.5'/><path d='M4 15.5v3A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5v-3'/></svg>";
@@ -96,7 +96,9 @@ export function revealActive(){
   else if(ar.bottom > sr.bottom - 8) side.scrollTop += (ar.bottom - sr.bottom + 8);
 }
 export function refreshTree(){
-  const inTree = S.DATA && document.querySelector(".tnode[data-lec='"+S.DATA.id+"'].open .tstep[data-n='"+S.curStep+"']");
+  let inTree = S.DATA && document.querySelector(".tnode[data-lec='"+S.DATA.id+"'].open .tstep[data-n='"+S.curStep+"']");
+  if(inTree && !inTree.offsetParent){ inTree = null;   // inside a closed lesson folder: open it
+    const ga = groupAt(S.DATA, S.curStep - 1); if(ga) openGroups.delete("-" + S.DATA.id + ":" + ga.g.n); }
   if(inTree){ syncStep(); document.querySelectorAll(".tnode[data-lec='"+S.DATA.id+"'] .tmore-note").length; }
   else keepSideScroll(renderLectures);
   revealActive();
@@ -108,15 +110,23 @@ export const stepLabel = t => t.replace(/^(Alternative\s+)?Step\s*\d+\s*[:.\-]\s
 const DEC = /^(\d+(?:\.\d+)+)\s/;
 // Explicit number in the heading ("Step 3:", "13.2 "), else for lectures that use sub-numbers (13.1)
 // a plain heading counts as the next main lecture, so "Step" can be dropped from Udacity headings.
-export const stepNum = (t, i, steps) => {
+// Lesson groups (index.json "groups": [{n, title, count}], in lecture order): lecture k of lesson n is "n.k".
+export function groupAt(l, i){
+  if(!l || !Array.isArray(l.groups)) return null;
+  let at = 0; for(const g of l.groups){ const c = +g.count || 0; if(i < at + c) return { g, k: i - at }; at += c; }
+  return null;
+}
+export const stepNum = (t, i, steps, l) => {
+  const ga = groupAt(l, i); if(ga) return ga.g.n + "." + (ga.k + 1);
   const m = t.match(/^(?:Alternative\s+)?Step\s*(\d+)/i) || t.match(DEC); if(m) return m[1];
   if(steps && steps.some(x => DEC.test(x))){ let n = 0; for(let k = 0; k <= i; k++) if(!DEC.test(steps[k]||"")){ const s = (steps[k]||"").match(/^(?:Alternative\s+)?Step\s*(\d+)/i); n = s ? +s[1] : n + 1; } return String(n); }
   return ""; };
-export const stepBadge = (t, i, steps) => {
+export const stepBadge = (t, i, steps, l) => {
+  const ga = groupAt(l, i); if(ga) return ga.g.n + "." + (ga.k + 1);
   const m = t.match(/^(Alternative\s+)?Step\s*(\d+)/i); if(m) return m[2] + (m[1] ? "b" : "");
   const d = t.match(DEC); if(d) return d[1];
   if(/^practice checkpoint/i.test(t)) return "\u2713";
-  return stepNum(t, i, steps) || String(i+1); };
+  return stepNum(t, i, steps, l) || String(i+1); };
 export const FOLDER = "<svg width='18' height='18' viewBox='0 0 24 24' fill='currentColor'><path d='M3 6.5A2.5 2.5 0 0 1 5.5 4h3.6c.6 0 1.2.25 1.6.7L12 6h6.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z'/></svg>";
 export const CARET = "<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='m9 6 6 6-6 6'/></svg>";
 export function treeNode(l){
@@ -129,14 +139,28 @@ export function treeNode(l){
 }
 export const HOUSE = "<svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M4 11 12 4l8 7'/><path d='M6 10v9h12v-9'/></svg>";
 export const STEP_LIMIT = 8, showAll = new Set();
+export const openGroups = new Set();   // "lectureId:lessonNumber" of lesson folders opened by the reader
+export const GCARET = "<svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='m9 6 6 6-6 6'/></svg>";
+function groupedItems(l, steps, li, home){
+  const cur = (S.DATA && S.DATA.id===l.id && !S.HOME) ? S.curStep - 1 : -1;
+  let html = home, at = 0;
+  l.groups.forEach(g => { const c = +g.count || 0; if(!c){ return; }
+    const key = l.id + ":" + g.n, here = cur >= at && cur < at + c, open = openGroups.has(key) || (here && !openGroups.has("-" + key));
+    html += "<li class='tgroup" + (open ? " open" : "") + (here ? " here" : "") + "'><button class='tgrp' data-action='toggleGroup' data-key='" + esc(key) + "' aria-expanded='" + open + "' title='" + esc(g.title) + "'>"
+      + "<span class='gc'>" + GCARET + "</span><span class='gn'>" + esc(g.n) + "</span><span class='gt'>" + esc(g.title) + "</span></button>"
+      + "<ul class='tgsteps'>" + steps.slice(at, at + c).map((st, k) => li(st, at + k)).join("") + "</ul></li>";
+    at += c; });
+  return html + steps.slice(at).map((st, k) => li(st, at + k)).join("");
+}
 export function stepItems(l, steps){
   const total = steps.length, cur = (S.DATA && S.DATA.id===l.id) ? S.curStep : 1;
   let from = 0, to = total;
   if(!showAll.has(l.id) && total > STEP_LIMIT){
     from = Math.max(0, Math.min(cur - 3, total - STEP_LIMIT)); to = from + STEP_LIMIT;
   }
-  const li = (st,i) => "<li><button class='tstep"+(isDone(l, i+1)?" complete":"")+"' data-action='goStep' data-lec='"+l.id+"' data-n='"+(i+1)+"'><span class='sn'>"+stepBadge(st,i,steps)+"</span><span>"+esc(stepLabel(st))+"</span></button></li>";
+  const li = (st,i) => "<li><button class='tstep"+(isDone(l, i+1)?" complete":"")+"' data-action='goStep' data-lec='"+l.id+"' data-n='"+(i+1)+"'><span class='sn'>"+stepBadge(st,i,steps,l)+"</span><span>"+esc(stepLabel(st))+"</span></button></li>";
   let html = l.home ? "<li><button class='tstep thome"+(S.HOME && S.DATA && S.DATA.id===l.id?" active":"")+"' data-action='openHome' data-id='"+l.id+"'><span class='sn'>"+HOUSE+"</span><span>Course Home</span></button></li>" : "";
+  if(Array.isArray(l.groups) && l.groups.length) return groupedItems(l, steps, li, html);
   if(from > 0) html += "<li><button class='tmore-note' data-action='toggleMore' data-id='"+l.id+"' title='Show all steps'><svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='m6 15 6-6 6 6'/></svg>Show "+from+" earlier step"+(from>1?"s":"")+"</button></li>";
   html += steps.slice(from, to).map((st,k) => li(st, from+k)).join("");
   if(total > STEP_LIMIT){
