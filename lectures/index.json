@@ -852,18 +852,38 @@
       "12.3 Exercise: COT Prompting",
       "12.4 Exercise: ReACT Prompting",
       "Prompt Instruction Refinement",
-      "13.1 Best Practices",
-      "13.2 Quiz",
-      "13.3 Summary",
+      "Best Practices",
+      "Quiz",
+      "Summary",
       "Applying Prompt Instruction Refinement with Python",
-      "14.1 Prompt Instruction Refinement",
-      "14.2 Exercise",
-      "14.3 Summary",
+      "Prompt Instruction Refinement",
+      "Exercise",
+      "Summary",
       "Chaining Prompts for Agentic Reasoning",
-      "15.1 Prompt Chaining",
-      "15.2 Output Validation: Gate Checks",
-      "15.3 Quiz",
-      "15.4 Summary"
+      "Prompt Chaining",
+      "Output Validation: Gate Checks",
+      "Quiz",
+      "Summary"
+    ],
+    "groups": [
+      {
+        "count": 19
+      },
+      {
+        "n": "7",
+        "title": "Prompt Instruction Refinement",
+        "count": 4
+      },
+      {
+        "n": "8",
+        "title": "Applying Prompt Instruction Refinement with Python",
+        "count": 4
+      },
+      {
+        "n": "9",
+        "title": "Chaining Prompts for Agentic Reasoning",
+        "count": 5
+      }
     ],
     "file": "07-udacity-agentic-nanodegree.md",
     "home": {
@@ -917,10 +937,10 @@
               "title": "Prompt Instruction Refinement",
               "description": "Explains the theory of systematically refining prompt instructions by modifying components like Role, Task, Context, Examples, and Output Format.",
               "steps": [
-                "13",
-                "13.1",
-                "13.2",
-                "13.3"
+                "7.1",
+                "7.2",
+                "7.3",
+                "7.4"
               ]
             },
             {
@@ -928,10 +948,10 @@
               "title": "Applying Prompt Instruction Refinement with Python",
               "description": "Provides hands-on practice iteratively refining a prompt to transform a generic recipe analyzer into a precise dietary consultant that produces structured JSON.",
               "steps": [
-                "14",
-                "14.1",
-                "14.2",
-                "14.3"
+                "8.1",
+                "8.2",
+                "8.3",
+                "8.4"
               ]
             },
             {
@@ -939,11 +959,11 @@
               "title": "Chaining Prompts for Agentic Reasoning",
               "description": "Explains the conceptual framework for building multi-step AI workflows by linking the output of one prompt to the input of the next, and the importance of validation.",
               "steps": [
-                "15",
-                "15.1",
-                "15.2",
-                "15.3",
-                "15.4"
+                "9.1",
+                "9.2",
+                "9.3",
+                "9.4",
+                "9.5"
               ]
             },
             {
@@ -1072,6 +1092,11 @@
         "n": "5",
         "title": "Agentic Workflow Implementation",
         "count": 7
+      },
+      {
+        "n": "6",
+        "title": "Agentic Workflow Patterns:  Prompt Chaining Workflow",
+        "count": 0
       }
     ],
     "resources": [],

@@ -3452,7 +3452,7 @@ Let's consider an agent set up to respond only to questions about a ship: `"Act 
 
 This behavior might be what we want. However, if we actually know the ship's age and want the LLM to use it, we need to include that age in the context. The model, thankfully, didn't invent an age, but we need to adjust the prompt if we want it to know more than just the name.
 
-## 13.1 Best Practices
+## Best Practices
 
 Each component of a prompt controls a different part of the output. Knowing which component does what lets you change the right thing when the result is not what you want.
 
@@ -3704,7 +3704,7 @@ Each step modifies a component (context, task, role), showing how the prompt ele
 - Start simple, test, and refine based on the results. Like software engineering, this iterative development is how you build effective LLM applications, from simple tasks to complex agentic systems.
 :::
 
-## 13.2 Quiz
+## Quiz
 
 ::: match {id=l132-match} Quiz Question
 Match the strategies used for optimizing LLM prompts with their respective descriptions.
@@ -3716,7 +3716,7 @@ heads: Prompt Optimization Strategies | Optimization Strategy
 - Streamlining tasks into simpler steps to enhance engagement. => Break Down Tasks
 :::
 
-## 13.3 Summary
+## Summary
 
 ### 🏆 Congratulations on Mastering Prompt Instruction Refinement! 🏆
 
@@ -3737,7 +3737,7 @@ This practice of analyzing, refining, and testing is something you can apply to 
 
 ## Applying Prompt Instruction Refinement with Python
 
-## 14.1 Prompt Instruction Refinement
+## Prompt Instruction Refinement
 
 ### From Vague Ideas to Precise Instructions
 
@@ -3820,7 +3820,7 @@ user_prompt_refined = f"Please analyze and categorize this email:\n\n{customer_e
 
 By refining our prompt with structured instructions, we transformed the AI's output from a simple sentence into a reliable, machine-readable JSON object. This is the power of prompt instruction refinement.
 
-## 14.2 Exercise
+## Exercise
 
 ### Exercise Introduction: Crafting Precise Prompts for Dietary Analysis
 
@@ -4074,7 +4074,7 @@ Let's take a moment to compare our initial prompt to our final one. In terms of 
 
 This iterative process shows how you can systematically refine a prompt to get a dramatically more transparent, accurate, and useful response from an AI. Excellent work!
 
-## 14.3 Summary
+## Summary
 
 ### Summary: Prompt Instruction Refinement
 
@@ -4148,7 +4148,7 @@ The video applies these ideas to a common task: a chain that generates a Python 
 Break the task into steps, link them with prompt chaining, and put a gate check between steps that verifies format, content or logic. Prompt chaining plus intermediate validation is what turns LLM calls into reliable agent workflows.
 :::
 
-## 15.1 Prompt Chaining
+## Prompt Chaining
 
 ### **Prompt Chaining**
 
@@ -4194,7 +4194,7 @@ What the video adds to the text above:
 - In both cases, **prompt chaining is what links the actions into one coherent process**.
 
 
-## 15.2 Output Validation: Gate Checks
+## Output Validation: Gate Checks
 
 ### Output Validation: Gate Checks
 
@@ -4297,7 +4297,7 @@ What the video adds to the text above:
 Think of the chain as building with bricks: check that each one clicks firmly into place before adding the next, because a wobbly brick can bring the structure down later.
 :::
 
-## 15.3 Quiz
+## Quiz
 
 ::: match {id=l153-match} Question 1 of 3
 Match each component of prompt chaining to its appropriate description:
@@ -4329,7 +4329,7 @@ Which of the following statements about gate checks in AI workflows are true?
 - [x] Implementing gate checks helps ensure quality control in an AI workflow.
 :::
 
-## 15.4 Summary
+## Summary
 
 ### Summary
 

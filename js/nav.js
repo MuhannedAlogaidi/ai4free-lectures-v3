@@ -113,8 +113,8 @@ const DEC = /^(\d+(?:\.\d+)+)\s/;
 // Lesson groups (index.json "groups": [{n, title, count}], in lecture order): lecture k of lesson n is "n.k".
 export function groupAt(l, i){
   if(!l || !Array.isArray(l.groups)) return null;
-  let at = 0; for(const g of l.groups){ const c = +g.count || 0; if(i < at + c) return { g, k: i - at }; at += c; }
-  return null;
+  let at = 0; for(const g of l.groups){ const c = +g.count || 0; if(i < at + c) return g.n ? { g, k: i - at } : null; at += c; }
+  return null;   // a group with no "n" keeps its lectures unfoldered, with their own numbers
 }
 export const stepNum = (t, i, steps, l) => {
   const ga = groupAt(l, i); if(ga) return ga.g.n + "." + (ga.k + 1);
@@ -144,11 +144,12 @@ export const GCARET = "<svg width='12' height='12' viewBox='0 0 24 24' fill='non
 function groupedItems(l, steps, li, home){
   const cur = (S.DATA && S.DATA.id===l.id && !S.HOME) ? S.curStep - 1 : -1;
   let html = home, at = 0;
-  l.groups.forEach(g => { const c = +g.count || 0; if(!c){ return; }
+  l.groups.forEach(g => { const c = +g.count || 0;
+    if(!g.n){ html += steps.slice(at, at + c).map((st, k) => li(st, at + k)).join(""); at += c; return; }
     const key = l.id + ":" + g.n, here = cur >= at && cur < at + c, open = openGroups.has(key) || (here && !openGroups.has("-" + key));
     html += "<li class='tgroup" + (open ? " open" : "") + (here ? " here" : "") + "'><button class='tgrp' data-action='toggleGroup' data-key='" + esc(key) + "' aria-expanded='" + open + "' title='" + esc(g.title) + "'>"
       + "<span class='gc'>" + GCARET + "</span><span class='gn'>" + esc(g.n) + "</span><span class='gt'>" + esc(g.title) + "</span></button>"
-      + "<ul class='tgsteps'>" + steps.slice(at, at + c).map((st, k) => li(st, at + k)).join("") + "</ul></li>";
+      + "<ul class='tgsteps'>" + (c ? steps.slice(at, at + c).map((st, k) => li(st, at + k)).join("") : "<li class='tempty'>No lectures yet</li>") + "</ul></li>";
     at += c; });
   return html + steps.slice(at).map((st, k) => li(st, at + k)).join("");
 }
