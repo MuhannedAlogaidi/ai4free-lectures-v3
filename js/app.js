@@ -441,13 +441,15 @@ export function renderHome(){
   };
   const mod = (m, j) => "<div class='ch-mod open'>"
     + "<button class='ch-mod-btn' data-action='homeToggle' aria-expanded='true' aria-controls='chList" + j + "'>"
-    + "<span class='ch-caret' aria-hidden='true'>" + CHEV + "</span><h2>" + esc(m.title) + "</h2><p>" + esc(m.description) + "</p>"
+    + "<span class='ch-caret' aria-hidden='true'>" + CHEV + "</span>"
+    + (m.label || m.estimate ? "<span class='ch-mlab'>" + (m.label ? "<strong>" + esc(m.label) + "</strong>" : "") + (m.estimate ? "<span class='ch-badge'>" + CLOCK + " " + esc(m.estimate) + "</span>" : "") + "</span>" : "")
+    + "<h2>" + esc(m.title) + "</h2><p>" + esc(m.description) + "</p>"
     + "<span class='ch-hide'>Hide Lessons" + CHEV + "</span>"
     + (m.project ? "<span class='ch-proj'><span>" + PROJECT_ICO + "<strong>Project:</strong> " + esc(m.project) + "</span>" + (m.status ? "<span class='ch-status'>" + esc(m.status) + "</span>" : "") + "</span>" : "")
     + "</button><div class='ch-list' id='chList" + j + "'>" + (m.lessons || []).map(lesson).join("") + "</div></div>";
   const doc = document.querySelector(".doc");
   doc.innerHTML = "<h1 id='title'>" + esc(l.title) + "</h1><div class='date' id='date'>Course Home</div>"
-    + "<div class='ch'><div class='ch-head'><div class='ch-course'>" + ring(all, all + "%", "lg") + "<span>" + esc(h.label || "") + "</span></div>"
+    + "<div class='ch'><div class='ch-head'><div class='ch-course'>" + ring(all, all + "%", "lg") + (h.label ? "<span>" + esc(h.label) + "</span>" : "") + "</div>"
     + (h.estimate ? "<span class='ch-badge'>" + CLOCK + " " + esc(h.estimate) + "</span>" : "") + "</div>"
     + (h.modules || []).map(mod).join("") + "</div>";
   document.title = l.title + " | AI4Free";

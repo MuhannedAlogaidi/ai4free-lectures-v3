@@ -298,3 +298,5 @@
 .wt .ln{ transition:opacity .2s, background .2s; }
 @media (max-width:900px){ .wt-grid{ grid-template-columns:1fr; } .wt-side{ border-right:0; border-bottom:1px solid var(--line); } }
 @media print{ .wt-step{ display:block !important; margin-bottom:10px; } .wt-nav, .wt-at{ display:none; } .wt-grid{ grid-template-columns:1fr; } .wt.focus .wt-code .ln{ opacity:1; } }
+.ch-mlab{display:flex;flex-wrap:wrap;align-items:center;gap:10px;align-self:flex-start;margin-bottom:6px;font-size:13px}
+.ch-mlab strong{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#a5e4f3}

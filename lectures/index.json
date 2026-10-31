@@ -1411,5 +1411,321 @@
         }
       ]
     }
+  },
+  {
+    "id": 13,
+    "title": "Agentic AI Engineer with LangChain and LangGraph",
+    "created": "2026-10-30T09:00",
+    "audioSize": "0 MB",
+    "file": "13-agentic-ai-engineer-langchain-langgraph.md",
+    "steps": [],
+    "resources": [],
+    "home": {
+      "label": "",
+      "estimate": "",
+      "modules": [
+        {
+          "label": "Course 1",
+          "estimate": "Estimated 8 hours, 37 minutes remaining",
+          "title": "LangChain Agentic AI Fundamentals",
+          "description": "This course provides a comprehensive overview of building intelligent agentic applications using LangChain. Participants will learn to create simple LangChain applications and explore structured outputs. The curriculum progresses through multi-step workflows, transitioning from LLM calls to developing agents, and covers essential agentic design patterns. Key concepts include extending agents with tools, managing functions, and understanding state management within LangGraph. Students will also implement short-term agent memory techniques and complete a hands-on project: building a report-generating agent.",
+          "project": "Report-Building Agent",
+          "status": "Overdue",
+          "lessons": [
+            {
+              "type": "Lesson",
+              "title": "Course Introduction & Setup",
+              "description": "Get introduced to the course, meet your instructors, and learn how to set up and use your Vocareum OpenAI API key and assigned budget for hands-on activities.",
+              "steps": [],
+              "remaining": "7 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Creating a Simple LangChain application",
+              "description": "Learn to build a simple LangChain app: integrate LLMs, manage chat history, use prompt templates, and apply few-shot prompting to create customizable chatbots with memory.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Structured Outputs",
+              "description": "Discover structured outputs in AI: transform responses into actionable JSON for integration. Utilize schemas, parsers, and function calls to enhance reliability and automation in workflows.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "LangChain Structured Outputs",
+              "description": "Learn to parse and structure LLM outputs in LangChain using output parsers, TypedDict, Pydantic models, and automatic error correction for robust workflows.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Multi-Step Workflows in LangChain",
+              "description": "Learn to build flexible, multi-step AI workflows in LangChain using Runnables and LCEL for composing, batching, and managing complex chains with ease and scalability.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "From LLM Calls to Agents",
+              "description": "Explore how AI evolves from basic LLM calls to fully autonomous agents, learn agentic frameworks, applications, and how to design effective agent-driven workflows.",
+              "steps": [],
+              "remaining": "15 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Design Patterns",
+              "description": "Discover four key agentic design patterns—reflection, tool use, planning, and multi-agent collaboration—to boost LLM performance and reliability in complex tasks.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Extending Agents with Tools",
+              "description": "Extend AI agents beyond text with tool integrations, enabling reliable real-time actions and data access.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Functions as Tools in LangChain",
+              "description": "Learn how to encapsulate Python functions as tools in LangChain, enabling LLMs to call functions, interact with APIs, and handle external computations in AI workflows.",
+              "steps": [],
+              "remaining": "15 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Workflows with LangGraph",
+              "description": "Learn to build dynamic, agent-driven AI workflows using LangGraph, leveraging nodes, edges, and routing for modular, adaptive application control and automation.",
+              "steps": [],
+              "remaining": "40 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Agent State Management",
+              "description": "Explore agent state management with state machines. Learn how agents track user input, instructions, and tool use for complex workflows, ensuring adaptability and reliability.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "LangGraph State Management",
+              "description": "Learn structured state management in LangGraph for robust AI workflows, with focus on TypedDicts, reducers, routing, handlers, persistence, and practical multi-turn agent design.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Short-Term Agent Memory",
+              "description": "Explore short-term memory in AI agents, enhancing coherence via state, ephemeral, and ephemeral memory strategies for efficient context retention in active sessions.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "LangGraph Agent Memory",
+              "description": "Learn how LangGraph uses checkpointers and threads for agent memory, allowing persistent, isolated, and customizable conversations with snapshots, time travel, and personalized assistance.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Project",
+              "title": "Project: Report-Building Agent",
+              "description": "Build a document processing system using LangChain/LangGraph. You'll create an AI assistant that answers questions, summarize documents, and perform calculations on financial and healthcare documents.",
+              "steps": [],
+              "remaining": "5 hours remaining",
+              "status": "Overdue"
+            }
+          ]
+        },
+        {
+          "label": "Course 2",
+          "estimate": "Estimated 7 hours, 7 minutes remaining",
+          "title": "Building AI Agents with LangGraph",
+          "description": "This course guides learners through the essentials of implementing intelligent agents using LangGraph. Learners will explore external tools and APIs, and learn how to integrate them effectively within their agents. Key lessons include interacting with databases and implementing LangGraph Database Agents for efficient data retrieval. The course covers advanced topics like Retrieval Augmented Generation, incorporating human-in-the-loop strategies, and ensuring agent observability and reliability. Finally, learners will apply these concepts in a hands-on project, designing an Energy Advisor agent, which synthesizes their knowledge into a practical application.",
+          "project": "Energy Advisor",
+          "status": "Overdue",
+          "lessons": [
+            {
+              "type": "Lesson",
+              "title": "Introduction",
+              "description": "Meet your instructor and get an overview of the course on building agentic systems in LangGraph.",
+              "steps": [],
+              "remaining": "7 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "External Tools and APIs",
+              "description": "Explore using external APIs for real-time data, dynamic actions, and authenticating agents. Discover MCP, a protocol standardizing AI’s tool interoperability and safety.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Integrating External Tools and APIs with LangChain",
+              "description": "Learn to integrate external APIs as tools in LangChain via LangGraph, enabling agents to fetch real-time data and enrich LLM responses using structured workflows and router logic.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Interacting with Databases",
+              "description": "Equip agents to access and modify structured data by using SQL for interaction and vector databases for semantic tasks, ensuring seamless integration with private systems.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "LangGraph Database Agents",
+              "description": "Learn to build LangGraph database agents that use AI to convert natural language into SQL queries, enabling users to query databases conversationally without writing SQL.",
+              "steps": [],
+              "remaining": "20 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Agentic Retrieval Augmented Generation",
+              "description": "Discover Agentic RAG: Enhance RAG by enabling reflection, query reformulation, and intelligent adaption for nuanced answers. Master retrieval, reasoning, and retry loops.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Single-Agent Retrieval Augmented Generation in LangGraph",
+              "description": "Explore single-agent Retrieval-Augmented Generation in LangGraph, adding agentic decision-making for dynamic web search and improved knowledge-grounded AI responses.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Human-in-the-Loop & Observability",
+              "description": "Explore human-in-the-loop and observability techniques to monitor, debug, and optimize AI agents, ensuring oversight, transparency, and reliable performance at scale.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "LangGraph Agent Observability",
+              "description": "Learn how to use MLflow with LangGraph and LangChain to trace, log, and inspect each step of agent workflows, enabling better debugging, transparency, and observability.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "LangGraph Agents with Human-in-the-Loop",
+              "description": "Explore how to add human approvals or edits at key points in LangGraph agent workflows, enhancing safety and control with human-in-the-loop techniques.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Agent Reliability & Evaluation",
+              "description": "Discover how to build reliable AI agents by defining success metrics, effective evaluation, continuous monitoring, and applying best practices for trustworthiness and real-world impact.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "LangGraph Agent Evaluation",
+              "description": "Learn to build, evaluate, and benchmark RAG pipelines and LangGraph agent workflows using RAGAS and MLflow for quality and correctness assessment.",
+              "steps": [],
+              "remaining": "20 minutes remaining"
+            },
+            {
+              "type": "Project",
+              "title": "Project: Energy Advisor",
+              "description": "In this project, you’ll build an AI agent with LangChain to optimize EcoHome energy use, integrating APIs, a database, and vector search, with LangGraph orchestration and evaluation.",
+              "steps": [],
+              "remaining": "5 hours remaining",
+              "status": "Overdue"
+            }
+          ]
+        },
+        {
+          "label": "Course 3",
+          "estimate": "Estimated 7 hours, 17 minutes remaining",
+          "title": "Advanced Agentic AI Techniques",
+          "description": "This course equips learners with the essential skills and knowledge to design and implement sophisticated agent-based systems. The course covers long-term memory integration within agents, emphasizing the LangGraph framework. Participants explore multi-agent architectures and state management, focusing on effective orchestration and data routing. Through hands-on projects, learners will implement agentic systems, culminating in the development of an Autonomous Knowledge Agent.",
+          "project": "Building Agents Project: Autonomous Knowledge Agent",
+          "status": "Due November 19, 2026",
+          "lessons": [
+            {
+              "type": "Lesson",
+              "title": "Course Introduction",
+              "description": "Meet your instructors and get an overview of advanced agentic systems and course structure.",
+              "steps": [],
+              "remaining": "7 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Long-Term Agent Memory",
+              "description": "Explore long-term agent memory: understand semantic, episodic, and procedural memories. Learn storage strategies and best practices for personalized, coherent interactions.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Long-Term Agent Memory in LangGraph",
+              "description": "Learn how to persist agent memory in LangGraph using databases like SQLite and enhance long-term AI memory with vector storage via LangMem for robust, session-aware agents.",
+              "steps": [],
+              "remaining": "10 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Designing Multi-Agent Architecture",
+              "description": "Explain the core components of multi-agent systems and how to design their high-level architecture.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Designing Multi-Agent Architectures with LangGraph",
+              "description": "Explore foundational multi-agent architecture patterns using LangGraph. Design, implement, and visualize orchestrated and peer-to-peer agent workflows for real-world scenarios.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "State Management in Multi-Agent Systems",
+              "description": "Evaluate methods for tracking and updating agent state across multi-turn interactions.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Multi-Agent Architectures with LangGraph",
+              "description": "Learn to design, implement, and orchestrate multi-agent workflows using LangGraph for structured, auditable, and automated content pipelines with specialized agents and custom state.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Orchestrating Agent Activities",
+              "description": "Apply orchestration techniques to coordinate multiple agent actions and achieve complex workflows.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Orchestrating Agent Activities with LangGraph",
+              "description": "Learn to orchestrate multi-agent workflows with LangGraph, using supervisors, handoffs, tool-calling, and structured state management for scalable, modular agent systems.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Lesson",
+              "title": "Routing and Data Flow in Agentic Systems",
+              "description": "Configure routing mechanisms to manage data flow among agents in multi-agent systems.",
+              "steps": []
+            },
+            {
+              "type": "Lesson",
+              "title": "Implementing Data Routing in Agentic Systems with LangGraph",
+              "description": "Learn to implement content-based, round-robin, and priority-based data routing in agentic systems using LangGraph, Pydantic, and LangChain frameworks.",
+              "steps": [],
+              "remaining": "30 minutes remaining"
+            },
+            {
+              "type": "Project",
+              "title": "Building Agents Project: Autonomous Knowledge Agent",
+              "description": "In this project, you will develop UDA-Hub, an intelligent, multi-agent decision suite capable of resolving customer support tickets across multiple platforms.",
+              "steps": [],
+              "remaining": "5 hours remaining",
+              "status": "Due November 19, 2026"
+            }
+          ]
+        }
+      ]
+    }
   }
 ]
