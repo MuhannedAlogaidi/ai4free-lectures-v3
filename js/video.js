@@ -41,7 +41,7 @@ export function renderVideo(attrs, title, buf){
   if(k.kind === "yt") player = "<iframe class='vid-frame' data-yt='" + k.id + "' src='https://www.youtube-nocookie.com/embed/" + k.id + "?rel=0' title='" + esc(title || "Video") + "' allow='autoplay; encrypted-media; picture-in-picture; fullscreen' allowfullscreen loading='lazy'></iframe>";
   else if(k.kind === "drive") player = "<iframe class='vid-frame' src='https://drive.google.com/file/d/" + k.id + "/preview' title='" + esc(title || "Video") + "' allow='autoplay; fullscreen' allowfullscreen loading='lazy'></iframe>";
   else if(k.kind === "file") player = "<video class='vid-el' controls preload='metadata' playsinline src='" + esc(k.url) + "'></video>";
-  else player = "<p class='vid-note vid-none'>Video not added yet. The chapters and transcript are below.</p>";
+  else player = "<p class='vid-note vid-none'>Video not added yet." + (tr || chapters.length ? " The chapters and transcript are below." : "") + "</p>";
   const link = (k.kind === "file" || k.kind === "none") ? "" : "<a class='vid-open' href='" + esc(src) + "' target='_blank' rel='noopener'>Open in " + (k.kind === "yt" ? "YouTube" : "Drive") + "</a>";
   const canSeek = k.kind === "file" || k.kind === "yt";
   const chHtml = chapters.length ? "<div class='vid-ch' role='list' aria-label='Chapters'>" + chapters.map((c, i) =>
