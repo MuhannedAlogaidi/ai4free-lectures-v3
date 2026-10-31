@@ -731,6 +731,9 @@ transcript: assets/transcripts/name.srt
 chapters:
 - 00:00 First chapter
 - 02:10 Next chapter
+slides:
+- 00:35 assets/images/name-slide-01.png
+- 01:03 assets/images/name-slide-02.png
 :::
 ```
 
@@ -741,7 +744,7 @@ chapters:
 | Google Drive link | The video plays; chapters and transcript are for reading |
 | No `src:` yet | Chapters and transcript are shown, with "Video not added yet" |
 
-`transcript:` takes an `.srt` file (timed, clickable lines) or a `.txt` file (plain paragraphs). A lecture can have several video blocks.
+`transcript:` takes an `.srt` file (timed, clickable lines) or a `.txt` file (plain paragraphs). A lecture can have several video blocks. `slides:` (optional, while there is no video file or YouTube link) shows the slide for the current moment: clicking a chapter or a transcript line moves to its slide.
 
 ## 13. Editor
 

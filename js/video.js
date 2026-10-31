@@ -7,7 +7,13 @@
    chapters:
    - 00:00 Chapter name
    - 02:10 Next chapter
+   slides:
+   - 00:35 assets/images/slide-01.png
+   - 01:03 assets/images/slide-02.png
    :::
+
+   slides: (optional, when there is no playable video) shows the slide for the current moment;
+   clicking a chapter or a transcript line moves to its slide.
 
    MP4: chapters and transcript lines seek the video, and the current line follows playback.
    YouTube: chapters restart the embed at that time; the transcript is shown but cannot follow playback.
@@ -29,25 +35,27 @@ export function srcKind(src){
 }
 
 export function renderVideo(attrs, title, buf){
-  let src = "", tr = "", inCh = false; const chapters = [];
+  let src = "", tr = "", sec = ""; const chapters = [], slides = [];
   buf.forEach(l => { const t = l.trim(); let m;
-    if(m = t.match(/^src:\s*(.+)$/i)){ src = m[1].trim(); inCh = false; }
-    else if(m = t.match(/^transcript:\s*(.+)$/i)){ tr = m[1].trim(); inCh = false; }
-    else if(/^chapters:\s*$/i.test(t)) inCh = true;
-    else if(inCh && (m = t.match(/^[-*]\s+((?:\d+:)?\d{1,2}:\d{2})\s+(.+)$/))) chapters.push({ t: toSec(m[1]), label: m[1], name: m[2] });
+    if(m = t.match(/^src:\s*(.+)$/i)){ src = m[1].trim(); sec = ""; }
+    else if(m = t.match(/^transcript:\s*(.+)$/i)){ tr = m[1].trim(); sec = ""; }
+    else if(m = t.match(/^(chapters|slides):\s*$/i)) sec = m[1].toLowerCase();
+    else if(sec && (m = t.match(/^[-*]\s+((?:\d+:)?\d{1,2}:\d{2})\s+(.+)$/)))
+      (sec === "chapters" ? chapters : slides).push({ t: toSec(m[1]), label: m[1], name: m[2].trim() });
   });
   const k = src ? srcKind(src) : { kind: "none" };
   let player;
   if(k.kind === "yt") player = "<iframe class='vid-frame' data-yt='" + k.id + "' src='https://www.youtube-nocookie.com/embed/" + k.id + "?rel=0' title='" + esc(title || "Video") + "' allow='autoplay; encrypted-media; picture-in-picture; fullscreen' allowfullscreen loading='lazy'></iframe>";
   else if(k.kind === "drive") player = "<iframe class='vid-frame' src='https://drive.google.com/file/d/" + k.id + "/preview' title='" + esc(title || "Video") + "' allow='autoplay; fullscreen' allowfullscreen loading='lazy'></iframe>";
   else if(k.kind === "file") player = "<video class='vid-el' controls preload='metadata' playsinline src='" + esc(k.url) + "'></video>";
+  else if(slides.length) player = "<figure class='vid-slide'><img src='" + esc(slides[0].name) + "' alt='Slide 1 from the video'><figcaption><span class='vs-n'>Slide 1 of " + slides.length + "</span><span>Video not added yet: click a chapter or a transcript line to see its slide.</span></figcaption></figure>";
   else player = "<p class='vid-note vid-none'>Video not added yet." + (tr || chapters.length ? " The chapters and transcript are below." : "") + "</p>";
   const link = (k.kind === "file" || k.kind === "none") ? "" : "<a class='vid-open' href='" + esc(src) + "' target='_blank' rel='noopener'>Open in " + (k.kind === "yt" ? "YouTube" : "Drive") + "</a>";
-  const canSeek = k.kind === "file" || k.kind === "yt";
+  const canSeek = k.kind === "file" || k.kind === "yt" || (k.kind === "none" && slides.length > 0);
   const chHtml = chapters.length ? "<div class='vid-ch' role='list' aria-label='Chapters'>" + chapters.map((c, i) =>
       "<button type='button' class='vid-chip' role='listitem' data-vt='" + c.t + "' data-ci='" + i + "'" + (canSeek ? "" : " disabled") + "><span class='vt'>" + esc(c.label) + "</span><span>" + inline(c.name) + "</span></button>").join("") + "</div>" : "";
   const trHtml = tr ? "<details class='vid-tr' open><summary>Transcript</summary><div class='vid-lines' data-src='" + esc(tr) + "'><p class='vid-note'>Loading transcript…</p></div></details>" : "";
-  return "<div class='vid' data-kind='" + k.kind + "'" + (attrs.id ? " id='vid-" + esc(attrs.id) + "'" : "") + ">"
+  return "<div class='vid' data-kind='" + k.kind + "'" + (slides.length && !(k.kind === "file" || k.kind === "yt") ? " data-slides='" + esc(JSON.stringify(slides.map(x => [x.t, x.name]))) + "'" : "") + (attrs.id ? " id='vid-" + esc(attrs.id) + "'" : "") + ">"
     + "<div class='vid-h'><span>" + (title ? inline(title) : "Video") + "</span>" + link + "</div>"
     + "<div class='vid-box" + (k.kind === "yt" || k.kind === "drive" ? " ratio" : "") + (k.kind === "none" ? " none" : "") + "'>" + player + "</div>"
     + chHtml + trHtml + "</div>";
@@ -76,7 +84,7 @@ export function hydrateVideos(root){
     if(box) loadTranscript(box.dataset.src).then(txt => {
       const timed = /-->/.test(txt), cues = timed ? parseSrt(txt) : [];
       if(timed && cues.length){
-        box.innerHTML = cues.map((c, i) => "<button type='button' class='vid-line' data-vt='" + c.s + "' data-i='" + i + "'" + (kind === "drive" || kind === "none" ? " disabled" : "") + "><span class='vt'>" + fmt(c.s) + "</span><span class='vx'>" + esc(c.text) + "</span></button>").join("");
+        box.innerHTML = cues.map((c, i) => "<button type='button' class='vid-line' data-vt='" + c.s + "' data-i='" + i + "'" + (kind === "drive" || (kind === "none" && !v.dataset.slides) ? " disabled" : "") + "><span class='vt'>" + fmt(c.s) + "</span><span class='vx'>" + esc(c.text) + "</span></button>").join("");
         v._cues = cues;
       } else box.innerHTML = txt.replace(/\r/g, "").split(/\n\s*\n/).map(p => p.trim()).filter(Boolean).map(p => "<p>" + esc(p.replace(/\n/g, " ")) + "</p>").join("") || "<p class='vid-note'>The transcript is empty.</p>";
     }).catch(() => { box.innerHTML = "<p class='vid-note'>Couldn't load the transcript.</p>"; });
@@ -84,7 +92,16 @@ export function hydrateVideos(root){
   });
 }
 
+function showSlide(v, t){
+  let list; try { list = JSON.parse(v.dataset.slides || "[]"); } catch(e){ return; }
+  if(!list.length) return;
+  let i = 0; list.forEach((x, j) => { if(x[0] <= t + 0.05) i = j; });
+  const img = v.querySelector(".vid-slide img"), n = v.querySelector(".vs-n");
+  if(img && img.getAttribute("src") !== list[i][1]){ img.src = list[i][1]; img.alt = "Slide " + (i + 1) + " from the video"; }
+  if(n) n.textContent = "Slide " + (i + 1) + " of " + list.length;
+}
 function follow(v, t){
+  showSlide(v, t);
   const chips = v.querySelectorAll(".vid-chip"); let ci = -1;
   chips.forEach((c, i) => { if(+c.dataset.vt <= t + 0.25) ci = i; });
   chips.forEach((c, i) => c.classList.toggle("on", i === ci));
@@ -101,6 +118,7 @@ function follow(v, t){
 function seek(v, t){
   const el = v.querySelector("video");
   if(el){ el.currentTime = t; el.play().catch(() => {}); follow(v, t); return; }
+  if(v.dataset.slides){ v._k = null; follow(v, t); return; }
   const f = v.querySelector("iframe[data-yt]");
   if(f){ f.src = "https://www.youtube-nocookie.com/embed/" + f.dataset.yt + "?rel=0&autoplay=1&start=" + Math.floor(t);
     v.querySelectorAll(".vid-chip").forEach(c => c.classList.toggle("on", +c.dataset.vt === t)); }
