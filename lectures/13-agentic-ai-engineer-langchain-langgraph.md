@@ -80,15 +80,6 @@ chapters:
 - 02:25 invoke: one way to call any model
 - 02:52 Messages as the unit of communication
 - 03:53 Summary
-slides:
-- 00:35 assets/images/lc12-slide-01.png
-- 01:03 assets/images/lc12-slide-02.png
-- 01:30 assets/images/lc12-slide-03.png
-- 01:40 assets/images/lc12-slide-04.png
-- 02:25 assets/images/lc12-slide-05.png
-- 02:52 assets/images/lc12-slide-06.png
-- 02:59 assets/images/lc12-slide-07.png
-- 03:06 assets/images/lc12-slide-08.png
 :::
 
 LangChain is a **framework for building applications powered by large language models (LLMs)**. It simplifies LLM integration, making it easier to develop AI-driven solutions like **chatbots, retrieval-augmented generation (RAG) systems, document summarization tools, and autonomous agents**.
@@ -147,13 +138,29 @@ What is the primary purpose of LangChain as a framework in the development of AI
 
 **Why LangChain exists.** LangChain emerged from the growing need to integrate large language models into all kinds of applications. As LLMs became more capable, developers wanted to use them for more than simple text generation, and LangChain gives them a framework that simplifies and standardizes that integration.
 
+![Why LangChain? The use cases it supports and the systems it connects to](assets/images/lc12-slide-01.png "Why LangChain? The use cases it supports and the systems it connects to")
+
 **One framework for many tasks.** Imagine a chatbot that has to pull real-time data from various sources, summarize documents and generate synthetic data for testing. LangChain provides the tools and integrations for all of these within a single framework, so you can focus on the solution instead of the complexity of connecting many systems.
+
+![One chatbot pulling real-time data, summarizing documents and generating synthetic data](assets/images/lc12-slide-02.png "One chatbot pulling real-time data, summarizing documents and generating synthetic data")
 
 **Providers come as separate packages.** LLMs are the base of LangChain: the engines that let an application understand and generate human-like text. Provider integrations are split into lightweight packages, maintained together by the LangChain team and the integration developers. Besides `langchain`, you install the package for your provider, such as `langchain-openai` or `langchain-anthropic`. The list keeps growing, so install the ones you develop with; this course uses OpenAI.
 
+![SDKs for Python, JavaScript and TypeScript; this course uses Python](assets/images/lc12-slide-03.png "SDKs for Python, JavaScript and TypeScript; this course uses Python")
+
+![LLMs from many providers, connected through LangChain](assets/images/lc12-slide-04.png "LLMs from many providers, connected through LangChain")
+
 **invoke works the same for every model.** You don't need to learn each provider's SDK. `invoke` is the primary method for talking to a chat model: it takes a list of messages as input and returns messages as output. Still check the documentation to see whether the advanced features you need work the same way across all the models you might use.
 
+![invoke() sends messages into the LLM and returns messages out](assets/images/lc12-slide-05.png "invoke() sends messages into the LLM and returns messages out")
+
 **Messages are the unit of communication.** Chat tools such as ChatGPT have two roles: the user (you) and the assistant. LangChain turns these into a unified message format that works across all chat models, so the provider's own format doesn't matter. You pass your text as a `HumanMessage` and receive an `AIMessage` back. For simplicity you can leave out the `HumanMessage` object and LangChain converts plain text for you. A `SystemMessage` passes instructions to the model, and a `ToolMessage` is used for function calling.
+
+![The user and assistant roles](assets/images/lc12-slide-06.png "The user and assistant roles")
+
+![A user and assistant exchange in ChatGPT](assets/images/lc12-slide-07.png "A user and assistant exchange in ChatGPT")
+
+![Each role and its LangChain message class](assets/images/lc12-slide-08.png "Each role and its LangChain message class")
 
 **The basic components.** Knowing LangChain's basic components (LLMs, message schemas and prompt templates) is what lets you use its full potential to build AI applications.
 
