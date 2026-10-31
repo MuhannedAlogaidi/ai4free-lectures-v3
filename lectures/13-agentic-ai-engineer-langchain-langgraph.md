@@ -71,7 +71,7 @@ In this project, you will design and implement a LangChain and LangGraph-powered
 ## Introduction to LangChain
 
 ::: video {id=lc12} Introduction to LangChain
-transcript: assets/transcripts/lc12-intro-langchain.srt
+transcript: assets/transcripts/lc12-intro-langchain.srt.txt
 chapters:
 - 00:00 Why LangChain exists
 - 00:35 Use cases and integrations
@@ -80,6 +80,24 @@ chapters:
 - 02:25 invoke: one way to call any model
 - 02:52 Messages as the unit of communication
 - 03:53 Summary
+:::
+
+::: details {open} Slides from the video
+![Why LangChain? The use cases it supports and the systems it connects to](assets/images/lc12-slide-01.png "Why LangChain? The use cases it supports and the systems it connects to")
+
+![Why LangChain? One chatbot pulling real-time data, summarizing documents and generating synthetic data](assets/images/lc12-slide-02.png "Why LangChain? One chatbot pulling real-time data, summarizing documents and generating synthetic data")
+
+![Basic components: SDKs for Python, JavaScript and TypeScript; this course uses Python](assets/images/lc12-slide-03.png "Basic components: SDKs for Python, JavaScript and TypeScript; this course uses Python")
+
+![Models: LLMs from many providers, connected through LangChain](assets/images/lc12-slide-04.png "Models: LLMs from many providers, connected through LangChain")
+
+![Models: invoke() sends messages into the LLM and returns messages out](assets/images/lc12-slide-05.png "Models: invoke() sends messages into the LLM and returns messages out")
+
+![Messages: the user and assistant roles](assets/images/lc12-slide-06.png "Messages: the user and assistant roles")
+
+![Messages: a user and assistant exchange in ChatGPT](assets/images/lc12-slide-07.png "Messages: a user and assistant exchange in ChatGPT")
+
+![Messages: each role and its LangChain message class](assets/images/lc12-slide-08.png "Messages: each role and its LangChain message class")
 :::
 
 LangChain is a **framework for building applications powered by large language models (LLMs)**. It simplifies LLM integration, making it easier to develop AI-driven solutions like **chatbots, retrieval-augmented generation (RAG) systems, document summarization tools, and autonomous agents**.
