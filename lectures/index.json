@@ -1419,6 +1419,26 @@
     "audioSize": "0 MB",
     "file": "13-agentic-ai-engineer-langchain-langgraph.md",
     "steps": [],
+    "groups": [
+      {
+        "n": "1",
+        "label": "C1",
+        "title": "LangChain Agentic AI Fundamentals",
+        "count": 0
+      },
+      {
+        "n": "2",
+        "label": "C2",
+        "title": "Building AI Agents with LangGraph",
+        "count": 0
+      },
+      {
+        "n": "3",
+        "label": "C3",
+        "title": "Advanced Agentic AI Techniques",
+        "count": 0
+      }
+    ],
     "resources": [],
     "home": {
       "label": "",

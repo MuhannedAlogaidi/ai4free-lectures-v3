@@ -148,7 +148,7 @@ function groupedItems(l, steps, li, home){
     if(!g.n){ html += steps.slice(at, at + c).map((st, k) => li(st, at + k)).join(""); at += c; return; }
     const key = l.id + ":" + g.n, here = cur >= at && cur < at + c, open = openGroups.has(key) || (here && !openGroups.has("-" + key));
     html += "<li class='tgroup" + (open ? " open" : "") + (here ? " here" : "") + "'><button class='tgrp' data-action='toggleGroup' data-key='" + esc(key) + "' aria-expanded='" + open + "' title='" + esc(g.title) + "'>"
-      + "<span class='gc'>" + GCARET + "</span><span class='gn'>" + esc(g.n) + "</span><span class='gt'>" + esc(g.title) + "</span></button>"
+      + "<span class='gc'>" + GCARET + "</span><span class='gn'>" + esc(g.label || g.n) + "</span><span class='gt'>" + esc(g.title) + "</span></button>"
       + "<ul class='tgsteps'>" + (c ? steps.slice(at, at + c).map((st, k) => li(st, at + k)).join("") : "<li class='tempty'>No lectures yet</li>") + "</ul></li>";
     at += c; });
   return html + steps.slice(at).map((st, k) => li(st, at + k)).join("");
