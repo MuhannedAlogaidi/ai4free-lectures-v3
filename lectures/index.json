@@ -1418,13 +1418,15 @@
     "created": "2026-10-30T09:00",
     "audioSize": "0 MB",
     "file": "13-agentic-ai-engineer-langchain-langgraph.md",
-    "steps": [],
+    "steps": [
+      "Introduction"
+    ],
     "groups": [
       {
         "n": "1",
         "label": "C1",
         "title": "LangChain Agentic AI Fundamentals",
-        "count": 0
+        "count": 1
       },
       {
         "n": "2",
@@ -1456,7 +1458,9 @@
               "type": "Lesson",
               "title": "Course Introduction & Setup",
               "description": "Get introduced to the course, meet your instructors, and learn how to set up and use your Vocareum OpenAI API key and assigned budget for hands-on activities.",
-              "steps": [],
+              "steps": [
+                "1.1"
+              ],
               "remaining": "7 minutes remaining"
             },
             {
