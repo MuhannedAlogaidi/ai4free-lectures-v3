@@ -82,7 +82,7 @@ chapters:
 - 03:53 Summary
 :::
 
-### From the video
+### Introduction
 
 **Why LangChain exists** [!00:00|gray]
 
