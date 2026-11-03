@@ -1,0 +1,72 @@
+{
+  "at": 1791661027382,
+  "data": {
+    "points": [
+      {
+        "heading": "Three domains, one pattern",
+        "terms": [
+          "role-based prompting",
+          "format and tone",
+          "examples"
+        ],
+        "text": "The lecture applies role-based prompting to coding, data analysis, and creative writing. In each case, role, task, format and tone, and examples work together to guide the AI agent."
+      },
+      {
+        "heading": "Senior Python Developer role",
+        "terms": [
+          "type hints",
+          "PEP 8",
+          "memoization"
+        ],
+        "text": "The system prompt asks for robust, well-documented code with type hints that follows PEP 8. The user prompt defines the task, such as a memoized Fibonacci function that handles n=0 and n=1, and supplies input/output examples."
+      },
+      {
+        "heading": "Marketing Data Analyst role",
+        "terms": [
+          "actionable insights",
+          "example format"
+        ],
+        "text": "The role directs the AI to read sales data through a marketing lens and give actionable insights. The user prompt supplies the data, asks for bullet-point findings and recommendations, and shows an example format for each."
+      },
+      {
+        "heading": "Fantasy Author role",
+        "terms": [
+          "stark prose",
+          "third-person perspective"
+        ],
+        "text": "The role sets a style of stark prose, realism within the fantasy setting, and underlying hope. The user prompt adds details such as third-person perspective, sensory focus, foreshadowing, and an approximate length of 30 words."
+      },
+      {
+        "heading": "System prompt versus user prompt",
+        "terms": [
+          "system prompt",
+          "user prompt"
+        ],
+        "text": "The system prompt holds the role and general instructions when working with an LLM's API. In an app like ChatGPT, you typically combine system and user prompts."
+      },
+      {
+        "heading": "Iterate and evaluate results",
+        "terms": [
+          "refine the prompt"
+        ],
+        "text": "If the output is not what you want, refine the prompt and try again. Then check the result against the criteria you set in Evaluating Agent Personas."
+      },
+      {
+        "heading": "Core components of a prompt",
+        "terms": [
+          "Role",
+          "Task",
+          "Output Format"
+        ],
+        "text": "The review lists four components: Role defines the specialization, Task details the request, Output Format describes the expected form, and Examples clarify requirements. Layering them gives the AI structure and context to produce tailored outputs."
+      }
+    ],
+    "slogan": "Define the role, guide the output",
+    "subtitle": "You will see how one prompting pattern guides AI in coding, data analysis, and creative writing.",
+    "takeaway": "Combining a clear role with a defined task, format and tone, and examples lets you guide AI output in any domain.",
+    "title": "Role-Based Prompts Across Domains"
+  },
+  "key": "L7-s8-short-professional",
+  "sub": "Udacity Agentic Nano-Degree · 10/10/2026",
+  "title": "Apply Role-Based Prompts to Different Domains"
+}
